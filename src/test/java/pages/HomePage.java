@@ -1,10 +1,10 @@
 package pages;
 
-import base.AbstractBasePage;
+import elements.HomePageElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePage extends AbstractBasePage {
+public class HomePage extends HomePageElements {
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -28,6 +28,11 @@ public class HomePage extends AbstractBasePage {
 
     public HomePage logoBtnClick(){
         getLogoBtn().click();
+        return this;
+    }
+
+    public HomePage clickConfirmationOfLocationButton() {
+        getConfirmationOfLocationButton().click();
         return this;
     }
 }
