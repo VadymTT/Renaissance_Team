@@ -2,8 +2,8 @@ package base;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,82 +11,43 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.List;
 
-import static org.testng.AssertJUnit.fail;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 @Slf4j
 abstract public class AbstractBasePage extends AbstractBase {
+
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions actions;
+    private int BASE_WAIT = 5000;
 
     public AbstractBasePage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofMillis(5000));
+        this.wait = new WebDriverWait(driver, Duration.ofMillis(BASE_WAIT));
         this.actions = new Actions(driver);
     }
 
-    protected WebElement waitUntilVisibilityOfElementLocated(String locator) {
-        try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
-        } catch (WebDriverException e) {
-            log.error("No visibility element: " + locator);
-            fail("No visibility element: " + locator);
-            return null;
-        }
+    protected WebElement waitUntilElementToBeVisibleByXpath(String locator) {
+        return wait.until(visibilityOfElementLocated(By.xpath(locator)));
     }
 
     protected WebElement waitUntilElementToBeClickable(String locator) {
-        try {
-            return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-        } catch (WebDriverException e) {
-            log.error("No clickable element: " + locator);
-            fail("No clickable element: " + locator);
-            return null;
-        }
+        return wait.until(elementToBeClickable(By.xpath(locator)));
     }
 
-    protected List<WebElement> waitUntilVisibilityOfElementsLocated(String locator) {
+    public boolean isCurrentUrlDisplayed(WebDriver driver, String url) {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
-            return driver.findElements(By.xpath(locator));
-        } catch (WebDriverException e) {
-            log.error("No visibility elements: " + locator);
-            fail("No visibility elements: " + locator);
-            return null;
-        }
-    }
-
-    protected List<WebElement> waitUntilElementsToBeClickable(String locator) {
-        try {
-            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-            return driver.findElements(By.xpath(locator));
-        } catch (WebDriverException e) {
-            log.error("No clickable elements: " + locator);
-            fail("No clickable elements: " + locator);
-            return null;
-        }
-    }
-
-    public void waitUntilUrlContainsText(String urlPath) {
-        try {
-            wait.until(ExpectedConditions.urlContains(urlPath));
-        } catch (WebDriverException e) {
-            log.error("This URL path is missing: " + urlPath);
-            fail("This URL path is missing: " + urlPath);
-            throw new AssertionError("This URL path is missing: " + urlPath);
+            wait.until(ExpectedConditions.urlContains(url));
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
     public void waitUntilNumberOfTabToBe(int tabNumber) {
-        try {
-            wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
-        } catch (WebDriverException e) {
-            log.error("No tabs with this number: " + tabNumber);
-            fail("No tabs with this number: " + tabNumber);
-            throw new AssertionError("No tabs with this number: " + tabNumber);
-        }
+        wait.until(ExpectedConditions.numberOfWindowsToBe(tabNumber));
     }
 
     public void goToNextTab(int tabNumber) {
@@ -101,5 +62,13 @@ abstract public class AbstractBasePage extends AbstractBase {
 
     protected void doubleClick(WebElement element) {
         actions.doubleClick(element).build().perform();
+    }
+
+    public void waitUntiUrlToBe(String expectedURL) {
+        wait.until(ExpectedConditions.urlToBe(expectedURL));
+    }
+
+    public static void scrollForElement(WebElement element, WebDriver driver) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }

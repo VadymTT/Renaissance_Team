@@ -2,9 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="UI smoke tests">
-    <listeners>
-        <listener class-name="listeners.RetryTestListener"/>
-    </listeners>
+
     <test name="Smoke customers tests">
         <groups>
             <run>

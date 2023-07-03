@@ -1,19 +1,16 @@
 package tests;
 
 import base.AbstractBaseTest;
-import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
-import pages.NewBalanceUaHeaderViewHelper;
+import pages.HomePage;
 
 public class InitialTest extends AbstractBaseTest {
 
     @Test
-    public void manShoesTest() {
-        NewBalanceUaHeaderViewHelper newBalanceUaHeaderView = new NewBalanceUaHeaderViewHelper(driver);
+    public void elementaryTest() {
+    HomePage homePage = new HomePage(driver);
 
-        openUrl("https://newbalance.ua/");
-        newBalanceUaHeaderView.goToMansShoesPage();
+        homePage.logoBtnClick();
 
-        Assertions.assertThat(getUrl()).isEqualTo("https://newbalance.ua/store/man/vzutta");
     }
 }
