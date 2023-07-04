@@ -31,8 +31,23 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
+    public HomePage clickCartIcon() {
+        getCartIcon().click();
+        return this;
+    }
+
     public HomePage clickConfirmationOfLocationButton() {
         getConfirmationOfLocationButton().click();
+        return this;
+    }
+
+    public HomePage sendKeysSearchField(String send) {
+        getSearchField().sendKeys(send);
+        return this;
+    }
+
+    public HomePage clickSearchBtn() {
+        getSearchBtn().click();
         return this;
     }
 }
