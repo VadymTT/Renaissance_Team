@@ -41,11 +41,11 @@ public class CheckCartTest extends AbstractBaseTest {
 
         String getTextSummaryProductPrice = shopPage.getTextSummaryProductPrice();
 
-        int integerValue1 = Integer.parseInt(selectProductPrice);
-        int integerValue2 = Integer.parseInt(selectSecondProductPrice);
+        int integerValueProductPrice = Integer.parseInt(selectProductPrice);
+        int integerValueSecondProductPrice = Integer.parseInt(selectSecondProductPrice);
         int integerValueSum = Integer.parseInt(getTextSummaryProductPrice);
 
-        softAssert.assertTrue(integerValue1 + integerValue2 == integerValueSum);
+        softAssert.assertTrue(integerValueProductPrice + integerValueSecondProductPrice == integerValueSum);
 
         cartPage.
                 clickDeleteButton();
