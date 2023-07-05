@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 
 public class HomePageElements extends AbstractBasePage {
 
-
     public HomePageElements(WebDriver driver) {
         super(driver);
     }
@@ -15,7 +14,6 @@ public class HomePageElements extends AbstractBasePage {
     private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
     private static final String HEADER_LOGO = "//a[@class='header__logo']";
     private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
-
 
     public WebElement getConfirmationOfLocationButton() {
         return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_LOCATION_BUTTON);
