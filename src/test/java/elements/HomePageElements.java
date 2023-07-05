@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class HomePageElements extends AbstractBasePage {
-
     public HomePageElements(WebDriver driver) {
         super(driver);
     }
