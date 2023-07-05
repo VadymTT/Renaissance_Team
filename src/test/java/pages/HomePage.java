@@ -31,8 +31,8 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
-    public HomePage clickCartIcon() {
-        getCartIcon().click();
+    public HomePage clickCartIconButton() {
+        getCartIconButton().click();
         return this;
     }
 
@@ -46,8 +46,8 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
-    public HomePage clickSearchBtn() {
-        getSearchBtn().click();
+    public HomePage clickSearchButton() {
+        getSearchButton().click();
         return this;
     }
 }
