@@ -1,7 +1,6 @@
 package tests;
 
 import base.AbstractBaseTest;
-import io.qameta.allure.Step;
 import jdk.jfr.Description;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;

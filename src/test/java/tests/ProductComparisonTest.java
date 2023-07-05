@@ -1,9 +1,10 @@
 package tests;
 
 import base.AbstractBaseTest;
-import io.qameta.allure.Step;
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.ComparePage;
 import pages.HomePage;
 import pages.ShopPage;
 
@@ -12,32 +13,42 @@ public class ProductComparisonTest extends AbstractBaseTest {
     public static final String SAMSUNG = "Samsung Galaxy S23 Ultra";
 
     @Test
+    @Description("Verify the functionality of product comparison")
     public void checkStoreLocationSelection() {
         HomePage homePage = new HomePage(driver);
         ShopPage shopPage = new ShopPage(driver);
+        ComparePage comparePage = new ComparePage(driver);
 
         homePage
                 .clickConfirmationOfLocationButton()
                 .sendKeysSearchField(IPHONE)
-                .clickSearchBtn();
+                .clickSearchButton();
 
         shopPage
                 .clickFirstIphoneItemInListCompare()
-                .clickCompareIcon()
+                .clickCompareIcon();
+
+        comparePage
                 .clickAddMoreButton();
 
         homePage
                 .sendKeysSearchField(SAMSUNG)
-                .clickSearchBtn();
+                .clickSearchButton();
 
         shopPage
                 .clickFirstSamsungItemInListCompare()
-                .clickCompareIcon()
+                .clickCompareIcon();
+
+        comparePage
                 .clickCompareButton()
                 .clickThoseThatDifferBtn()
-                .clickAddModel()
+                .clickAddModel();
+
+        shopPage
                 .clickSecondItemInListCompare()
-                .clickCompareIcon()
+                .clickCompareIcon();
+
+        comparePage
                 .clickCompareButton()
                 .clickClearList();
 

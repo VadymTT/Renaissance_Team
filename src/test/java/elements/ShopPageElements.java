@@ -16,6 +16,17 @@ public class ShopPageElements extends AbstractBasePage {
     private static final String SECOND_PRODUCT_PRICE_IN_CART = "(//p[@class='basket-product__price-main'])[2]";
     private static final String SUMMARY_PRODUCT_PRICE = "//span[@class='basket-purchase__send-sum--new']";
 
+    //mobile page
+    private static final String BUY_BUTTON = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[1]";
+    private static final String SECOND_BUY_BUTTON = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[2]";
+    private static final String CARD_INFO = "(//div[@class='card__info'])[1]";
+    private static final String SECOND_CARD_INFO = "(//div[@class='card__info'])[2]";
+    private static final String CONTINUE_PURCHASING = "//button[@class='btn btn--3 btn--white']";
+    private static final String FIRST_IPHONE_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003265676']";
+    private static final String FIRST_SAMSUNG_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003364310']";
+    private static final String SECOND_ITEM_IN_LIST_COMPARE = "(//div[@class='card__add'])[2]/a[@data-tooltip='bottom']";
+    private static final String COMPARE_ICON = "//span[@class='header__compare-link-icon']";
+
     //shop page
     protected WebElement getProductPrice() {
         return waitUntilElementToBeVisibleByXpath(PRODUCT_PRICE);
@@ -36,17 +47,6 @@ public class ShopPageElements extends AbstractBasePage {
     protected WebElement getSummaryProductPrice() {
         return waitUntilElementToBeVisibleByXpath(SUMMARY_PRODUCT_PRICE);
     }
-
-    //mobile page
-    private static final String BUY_BUTTON = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[1]";
-    private static final String SECOND_BUY_BUTTON = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[2]";
-    private static final String CARD_INFO = "(//div[@class='card__info'])[1]";
-    private static final String SECOND_CARD_INFO = "(//div[@class='card__info'])[2]";
-    private static final String CONTINUE_PURCHASING = "//button[@class='btn btn--3 btn--white']";
-    private static final String FIRST_IPHONE_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003265676']";
-    private static final String FIRST_SAMSUNG_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003364310']";
-    private static final String SECOND_ITEM_IN_LIST_COMPARE = "(//div[@class='card__add'])[2]/a[@data-tooltip='bottom']";
-    private static final String COMPARE_ICON = "//span[@class='header__compare-link-icon']";
 
     //mobile page
     public WebElement getBuyButton() {
@@ -83,33 +83,5 @@ public class ShopPageElements extends AbstractBasePage {
 
     public WebElement getCompareIcon() {
         return waitUntilElementToBeClickable(COMPARE_ICON);
-    }
-
-    //compare page
-    private static final String ADD_MORE_BUTTON = "(//a[@class='btn btn--compare btn--blue '])[1]";
-    private static final String COMPARE_BUTTON = "(//a[@class='btn btn--compare btn--blue '])[1]";
-    private static final String THOSE_THAT_DIFFER_BTN = "//span[@class='radio__text'][text()='Тільки ті, що розрізняються']";
-    private static final String ADD_MODEL = "//a[@class='link link--inverted table-controls__link table-controls__link--add']";
-    private static final String CLEAR_LIST = "//a[@class='link link--inverted table-controls__link table-controls__link--remove']";
-
-    //compare page
-    public WebElement getAddMoreButton() {
-        return waitUntilElementToBeClickable(ADD_MORE_BUTTON);
-    }
-
-    public WebElement getCompareButton() {
-        return waitUntilElementToBeClickable(COMPARE_BUTTON);
-    }
-
-    public WebElement getThoseThatDifferBtn() {
-        return waitUntilElementToBeClickable(THOSE_THAT_DIFFER_BTN);
-    }
-
-    public WebElement getAddModel() {
-        return waitUntilElementToBeClickable(ADD_MODEL);
-    }
-
-    public WebElement getClearList() {
-        return waitUntilElementToBeClickable(CLEAR_LIST);
     }
 }

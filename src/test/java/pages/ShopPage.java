@@ -73,30 +73,4 @@ public class ShopPage extends ShopPageElements {
         getCompareIcon().click();
         return this;
     }
-
-    //compare page
-    public ShopPage clickAddMoreButton() {
-        getAddMoreButton().click();
-        return this;
-    }
-
-    public ShopPage clickCompareButton() {
-        getCompareButton().click();
-        return this;
-    }
-
-    public ShopPage clickThoseThatDifferBtn() {
-        getThoseThatDifferBtn().click();
-        return this;
-    }
-
-    public ShopPage clickAddModel() {
-        getAddModel().click();
-        return this;
-    }
-
-    public ShopPage clickClearList() {
-        getClearList().click();
-        return this;
-    }
 }
