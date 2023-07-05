@@ -45,7 +45,6 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
             String str = element.getAttribute("title").replace("Ціна:", "")
                     .replace("₴", "").replaceAll(" ", "");
             int price = Integer.parseInt(str);
-            System.out.println(price);
             softAssert.assertTrue(minRange <= price && price <= maxRange,
                     "Product filtering by price doesn't work correctly");
         }
@@ -58,7 +57,6 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
             String s = el.getText().replace("Швидкість віджимання (max): ", "")
                     .replaceAll(" ", "");
             int speed = Integer.parseInt(s);
-            System.out.println(speed);
             softAssert.assertTrue(1100 <= speed && speed <= 1200,
                     "Product filtering by speed doesn't work correctly");
         }
