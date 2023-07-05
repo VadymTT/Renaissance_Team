@@ -8,6 +8,7 @@ public class ShopPageElements extends AbstractBasePage {
     public ShopPageElements(WebDriver driver) {
         super(driver);
     }
+
     //shop page
     private static final String PRODUCT_PRICE = "(//p[@class='card__price-actual card__price-actual--action']/span[@class='card__price-sum'])[1]";
     private static final String SECOND_PRODUCT_PRICE = "(//p[@class='card__price-actual card__price-actual--action']/span[@class='card__price-sum'])[2]";

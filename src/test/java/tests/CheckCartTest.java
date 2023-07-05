@@ -1,10 +1,12 @@
 package tests;
 
 import base.AbstractBaseTest;
+import io.qameta.allure.Step;
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.CartPage;
 import pages.HomePage;
-import org.testng.asserts.SoftAssert;
 import pages.ShopPage;
 
 public class CheckCartTest extends AbstractBaseTest {
@@ -12,17 +14,17 @@ public class CheckCartTest extends AbstractBaseTest {
     public static final String IPHONE = "iPhone 14 Pro Max";
 
     @Test
+    @Description("Verify the functionality of checking the cart")
     public void checkStoreLocationSelection() {
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
         SoftAssert softAssert = new SoftAssert();
         ShopPage shopPage = new ShopPage(driver);
 
-
         homePage
                 .clickConfirmationOfLocationButton()
                 .sendKeysSearchField(IPHONE)
-                .clickSearchBtn();
+                .clickSearchButton();
 
         shopPage
                 .moveToCardInfo()
@@ -56,7 +58,7 @@ public class CheckCartTest extends AbstractBaseTest {
                 .clickCloseButton();
 
         homePage.
-                clickCartIcon();
+                clickCartIconButton();
 
         cartPage.
                 clickDeleteAllProducts()
@@ -69,5 +71,4 @@ public class CheckCartTest extends AbstractBaseTest {
         softAssert.assertTrue(currentUrl.equals(MY_ACCOUNT_PAGE_LINK));
         softAssert.assertAll();
     }
-
 }
