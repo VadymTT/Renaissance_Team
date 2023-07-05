@@ -43,16 +43,16 @@ public class ShopPage extends ShopElements {
 
     @Step("Open spin speed drop-down menu.")
     public ShopPage openSpinSpeedMenu() {
-        getSpinSpeed().click();
+        getSpinSpeedDropDown().click();
         sleep(1000);
         return this;
     }
 
     @Step("Choose spin speed parameter {speed}")
     public ShopPage selectSpinSpeed(String speed) {
-        scrollForElement(getSpinSpeedF(speed), driver);
-        getSpinSpeedF(speed).click();
-        sleep(1000);
+        scrollForElement(getSpinSpeedSelect(speed), driver);
+        getSpinSpeedSelect(speed).click();
+        sleep(1200);
         return this;
     }
 

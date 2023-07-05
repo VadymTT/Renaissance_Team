@@ -48,11 +48,11 @@ public class ShopElements extends AbstractBasePage {
         return waitUntilElementToBeVisibleByXpath(MAX_PRICE_INPUT);
     }
 
-    protected WebElement getSpinSpeed() {
+    protected WebElement getSpinSpeedDropDown() {
         return waitUntilElementToBeClickable(SPIN_SPEED_DROPDOWN);
     }
 
-    protected WebElement getSpinSpeedF(String speed) {
+    protected WebElement getSpinSpeedSelect(String speed) {
         return waitUntilElementToBeClickable(String.format(SPIN_SPEED_SELECT, speed));
     }
 
