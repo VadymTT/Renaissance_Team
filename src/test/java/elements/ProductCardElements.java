@@ -8,9 +8,10 @@ public class ProductCardElements extends AbstractBasePage {
     public ProductCardElements(WebDriver driver) {
         super(driver);
     }
-    private static final String  WISHLIST_BTN= "//button[@data-text='У бажання']";
 
-    protected WebElement getWishlistBtn(){
+    private static final String WISHLIST_BTN = "//button[@data-text='У бажання']";
+
+    protected WebElement getWishlistBtn() {
         return waitUntilElementToBeClickable(WISHLIST_BTN);
     }
 }

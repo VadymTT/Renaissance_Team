@@ -11,20 +11,20 @@ public class ShopPage extends ShopElements {
         super(driver);
     }
 
-    @Step("Click on category {category}")
+    @Step("Click on category {category}.")
     public ShopPage clickOnCategory(String category) {
         getCategoryByDataAlt(category).click();
         return this;
     }
 
-    @Step("Click on product brand {brand}")
+    @Step("Click on product brand {brand}.")
     public ShopPage clickOnProductBrand(String brand, String brandUrl) {
         getProductBrand(brand).click();
         waitUrlContains(driver, brandUrl);
         return this;
     }
 
-    @Step("")
+    @Step("Select minimum price on the sorting panel.")
     public ShopPage entryMinPrice(String price) {
         scrollForElement(getMinPriceInput(), driver);
         getMinPriceInput().clear();
@@ -33,7 +33,7 @@ public class ShopPage extends ShopElements {
         return this;
     }
 
-    @Step("")
+    @Step("Select maximum price on the sorting panel.")
     public ShopPage entryMaxPrice(String price) {
         getMaxPriceInput().clear();
         getMaxPriceInput().sendKeys(price);
@@ -41,25 +41,25 @@ public class ShopPage extends ShopElements {
         return this;
     }
 
-    @Step("Open spin speed drop-down menu")
+    @Step("Open spin speed drop-down menu.")
     public ShopPage openSpinSpeedMenu() {
         getSpinSpeed().click();
         sleep(1000);
         return this;
     }
 
-    @Step("Click on spin speed 1100-1200")
-    public ShopPage clickOnSpinSpeedF(String speed) {
+    @Step("Choose spin speed parameter {speed}")
+    public ShopPage selectSpinSpeed(String speed) {
         scrollForElement(getSpinSpeedF(speed), driver);
         getSpinSpeedF(speed).click();
         sleep(1000);
         return this;
     }
-    @Step("")
-    public ShopPage clickOnProductCard() {
-        getProductCard().click();
-        sleep(800);
+
+    @Step("Click on the first product in the displayed list.")
+    public ShopPage clickOnFirstProductCard() {
+        getFirstProductCardName().click();
+        sleep(1200);
         return this;
     }
 }
-

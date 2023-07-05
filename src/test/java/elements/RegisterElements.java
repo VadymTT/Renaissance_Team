@@ -10,8 +10,13 @@ public class RegisterElements extends AbstractBasePage {
     }
 
     private static final String LOGIN_POPUP = "//div[@id='popup-login']";
+    private static final String CLOSE_POPUP_BTN = "//div[@id='popup-login']//button[@title='Close']";
 
-    public WebElement getLoginPopUp(){
+    public WebElement getLoginPopUp() {
         return waitUntilElementToBeVisibleByXpath(LOGIN_POPUP);
+    }
+
+    protected WebElement getClosePopUpBtn() {
+        return waitUntilElementToBeClickable(CLOSE_POPUP_BTN);
     }
 }

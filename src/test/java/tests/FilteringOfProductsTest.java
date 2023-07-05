@@ -18,7 +18,7 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
         HomePage homePage = new HomePage(driver);
         ShopPage shopPage = new ShopPage(driver);
         ProductCardPage productCardPage = new ProductCardPage(driver);
-        RegisterPage registerPage =new RegisterPage(driver);
+        RegisterPage registerPage = new RegisterPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
         homePage
@@ -33,6 +33,7 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
             softAssert.assertTrue(element.getText().contains("Samsung"),
                     "Product filtering by the selected brand doesn't work correctly");
         }
+
         shopPage
                 .entryMinPrice("17000")
                 .entryMaxPrice("25000");
@@ -48,9 +49,10 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
             softAssert.assertTrue(minRange <= price && price <= maxRange,
                     "Product filtering by price doesn't work correctly");
         }
+
         shopPage
                 .openSpinSpeedMenu()
-                .clickOnSpinSpeedF("1100-1200");
+                .selectSpinSpeed("1100-1200");
 
         for (WebElement el : shopPage.getCardCharacteristics()) {
             String s = el.getText().replace("Швидкість віджимання (max): ", "")
@@ -60,13 +62,16 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
             softAssert.assertTrue(1100 <= speed && speed <= 1200,
                     "Product filtering by speed doesn't work correctly");
         }
-        shopPage.clickOnProductCard();
+
+        shopPage.clickOnFirstProductCard();
         productCardPage.clickWishlistBtn();
 
-        softAssert.assertTrue(registerPage.getLoginPopUp().isDisplayed(),
-                "Login popup is not displayed");
+        softAssert.assertTrue(registerPage.getLoginPopUp().isDisplayed(), "Login popup is not displayed");
 
+        registerPage.closePopUpBtn();
 
+        softAssert.assertTrue(homePage.getHeaderLogo().isDisplayed(), "Login popup is not closed");
+
+        softAssert.assertAll();
     }
 }
-

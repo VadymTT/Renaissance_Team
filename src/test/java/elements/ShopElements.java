@@ -18,11 +18,11 @@ public class ShopElements extends AbstractBasePage {
     private static final String MIN_PRICE_INPUT = "(//input[@data-slider-id='price'])[1]";
     private static final String MAX_PRICE_INPUT = "(//input[@data-slider-id='price'])[2]";
     private static final String SPIN_SPEED_DROPDOWN = "//div[@data-sort='700']/span";
-    private static final String SPIN_SPEED_1100_1200 = "//input[@data-filter-name='%s об./хв']//following-sibling::span";
+    private static final String SPIN_SPEED_SELECT = "//input[@data-filter-name='%s об./хв']//following-sibling::span";
     private static final String CARD_CHARACTERISTICS= "//div[@class='columns']//ul[@class='card__characteristics']/li[last()]";
     private static final String PRICE_OF_ALL_PRODUCTS = "//div[@class='columns']//p[@class='card__price-actual" +
             " card__price-actual--action']";
-    private static final String PRODUCT_CARD= "(//div[@class='card '])[1]";
+    private static final String FIRST_PRODUCT_CARD_NAME = "(//div[@class='card__name'])[1]//a";
 
     protected WebElement getCategoryByDataAlt(String category) {
         return waitUntilElementToBeVisibleByXpath(String.format(CATEGORY_BY_DATA_ALT, category));
@@ -53,13 +53,13 @@ public class ShopElements extends AbstractBasePage {
     }
 
     protected WebElement getSpinSpeedF(String speed) {
-        return waitUntilElementToBeClickable(String.format(SPIN_SPEED_1100_1200, speed));
+        return waitUntilElementToBeClickable(String.format(SPIN_SPEED_SELECT, speed));
     }
 
     public List<WebElement> getCardCharacteristics() {
         return waitUntilPresenceOfAllElementsByXpath(CARD_CHARACTERISTICS);
     }
-    protected WebElement getProductCard() {
-        return waitUntilElementToBeClickable(PRODUCT_CARD);
+    protected WebElement getFirstProductCardName() {
+        return waitUntilElementToBeClickable(FIRST_PRODUCT_CARD_NAME);
     }
 }

@@ -9,7 +9,7 @@ public class ProductCardPage extends ProductCardElements {
         super(driver);
     }
 
-    @Step("")
+    @Step("Click on wishlist button on product cart page.")
     public ProductCardPage clickWishlistBtn() {
         getWishlistBtn().click();
         return this;
