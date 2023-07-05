@@ -31,4 +31,8 @@ abstract public class AbstractBaseTest extends AbstractBase{
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
+
+    public String getPageSource() {
+        return driver.getPageSource();
+    }
 }
