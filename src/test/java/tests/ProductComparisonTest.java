@@ -9,6 +9,7 @@ import pages.HomePage;
 import pages.ShopPage;
 
 public class ProductComparisonTest extends AbstractBaseTest {
+
     public static final String IPHONE = "iPhone 14 Pro Max";
     public static final String SAMSUNG = "Samsung Galaxy S23 Ultra";
 
@@ -53,6 +54,7 @@ public class ProductComparisonTest extends AbstractBaseTest {
                 .clickClearList();
 
         String pageSource = getPageSource();
+
         Assert.assertTrue(pageSource.contains("Вибачте, але Ви ще нічого не додали в порівняння"), "Вибачте, але Ви ще нічого не додали в порівняння");
     }
 }
