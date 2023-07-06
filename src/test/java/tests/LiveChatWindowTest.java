@@ -46,7 +46,6 @@ public class LiveChatWindowTest extends AbstractBaseTest {
                 .closeSupportServicePopup();
 
         softAssert.assertEquals(informationPage.getSupportServicePopUp().size(), 0);
-
         softAssert.assertAll();
     }
 }
