@@ -26,5 +26,4 @@ public class ProductCardPage extends ProductCardElements {
         getBuyBtn(number).click();
         return this;
     }
-
 }
