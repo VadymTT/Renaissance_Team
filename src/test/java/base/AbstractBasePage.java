@@ -64,7 +64,7 @@ abstract public class AbstractBasePage extends AbstractBase {
         actions.doubleClick(element).build().perform();
     }
 
-    public void waitUntiUrlToBe(String expectedURL) {
+    public void waitUntilUrlToBe(String expectedURL) {
         wait.until(ExpectedConditions.urlToBe(expectedURL));
     }
 

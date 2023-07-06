@@ -10,7 +10,7 @@ import pages.InformationPage;
 public class LiveChatWindowTest extends AbstractBaseTest {
 
     @Test
-    @Description("")
+    @Description("TR-14/Test Case 2. Check live chat window.")
     public void checkLiveChatWindow() {
         HomePage homePage = new HomePage(driver);
         InformationPage informationPage = new InformationPage(driver);
@@ -26,22 +26,27 @@ public class LiveChatWindowTest extends AbstractBaseTest {
                 .clickSupportServiceBtn()
                 .clickSupportServiceChatBtn();
 
-        softAssert.assertTrue(informationPage.getSupportServicePopUp().isDisplayed(),
+        softAssert.assertTrue(informationPage.getSupportServicePopUp().get(0).isDisplayed(),
                 "Expert support pop-up is not displayed");
 
         informationPage
                 .entryNameOnSupportServiceInput("")
                 .entryPhoneOnSupportServiceInput("+7 (654) 237-87-65")
-                .entryEmailOnSupportServiceInput("vadremail");
+                .entryEmailOnSupportServiceInput("vadremail")
+                .clickSendFormBtn();
+
         softAssert.assertTrue(informationPage.getErrorMessageMustEntryName().isDisplayed(),
                 "Message 'Поле обовязкове для заповнення' did not appear!");
-        softAssert.assertTrue(informationPage.getErrorMessageMustEntryPhone().isDisplayed(),
-                "Message 'Поле обовязкове для заповнення' did not appear!");
-        softAssert.assertTrue(informationPage.getErrorMessageEntryWrong().isDisplayed(),
+        softAssert.assertTrue(informationPage.getErrorMessageWrongPhone().isDisplayed(),
+                "Message 'Поле заповнене неправильно' did not appear!");
+        softAssert.assertTrue(informationPage.getErrorMessageEntryWrongEmail().isDisplayed(),
                 "Message 'Введено неправильний email' did not appear!");
 
+        informationPage
+                .closeSupportServicePopup();
 
+        softAssert.assertEquals(informationPage.getSupportServicePopUp().size(), 0);
 
-
+        softAssert.assertAll();
     }
 }

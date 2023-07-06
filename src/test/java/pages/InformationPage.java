@@ -31,10 +31,24 @@ public class InformationPage extends InformationPageElements {
     public InformationPage entryPhoneOnSupportServiceInput(String data) {
         getPhoneInputOnSupportService().sendKeys(data);
         return this;
-    }@Step("Click on email input at the support service chat.")
+    }
+
+    @Step("Click on email input at the support service chat.")
     public InformationPage entryEmailOnSupportServiceInput(String data) {
         getEmailInputOnSupportService().sendKeys(data);
         return this;
     }
 
+    @Step("Click on 'Надіслати' button this form.")
+    public InformationPage clickSendFormBtn() {
+        getSendFormBtn().click();
+        return this;
+    }
+
+    @Step("Close support service pop-up.")
+    public InformationPage closeSupportServicePopup() {
+        getCloseSupportServiceBtn().click();
+        sleep(0.5);
+        return this;
+    }
 }
