@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import static base.CommonActions.waitUrlContains;
 
 public class ShopPage extends ShopElements {
+
     public ShopPage(WebDriver driver) {
         super(driver);
     }
@@ -60,6 +61,18 @@ public class ShopPage extends ShopElements {
     public ShopPage clickOnFirstProductCard() {
         getFirstProductCardName().click();
         sleep(1200);
+        return this;
+    }
+
+    @Step("Click on Close Regional Banner button.")
+    public ShopPage clickCloseRegionalBannerBtn() {
+        getCloseRegionalBannerBtn().click();
+        return this;
+    }
+
+    @Step("Click on Profitably Buy button.")
+    public ShopPage clickProfitablyBuyBtn() {
+        getProfitablyBuyBtn().click();
         return this;
     }
 }
