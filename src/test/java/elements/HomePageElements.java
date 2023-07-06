@@ -14,6 +14,9 @@ public class HomePageElements extends AbstractBasePage {
     private static final String SEARCH_FIELD = "//input[@class='_JcImSJ']";
     private static final String SEARCH_BUTTON = "//button[@class='_cvO7u1']";
     private static final String CART_ICON_BUTTON = "//div[@class='header__cart']";
+    private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
+    private static final String HEADER_LOGO = "//a[@class='header__logo']";
+    private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
 
     //home elements
     public WebElement getConfirmationOfLocationButton() {
@@ -31,5 +34,17 @@ public class HomePageElements extends AbstractBasePage {
 
     public WebElement getSearchButton() {
         return waitUntilElementToBeVisibleByXpath(SEARCH_BUTTON);
+    }
+
+    public WebElement getCatalogBtn() {
+        return waitUntilElementToBeVisibleByXpath(CATALOG_BTN);
+    }
+
+    protected WebElement getCategoryTittle(String category) {
+        return waitUntilElementToBeVisibleByXpath(String.format(TITTLE_OF_CATEGORY, category));
+    }
+
+    public WebElement getHeaderLogo() {
+        return waitUntilElementToBeVisibleByXpath(HEADER_LOGO);
     }
 }
