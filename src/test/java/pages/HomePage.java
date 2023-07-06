@@ -23,22 +23,23 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-    @Step("Click on category on the main drop-down menu {category}")
+    @Step("Click on category on the main drop-down menu {category}.")
     public HomePage clickOnCategoryTittle(String category) {
         getCategoryTittle(category).click();
         return this;
     }
+    @Step("Entry {product} on the search field.")
     public HomePage entryOnSearchField(String product) {
         getSearchField().sendKeys(product);
         return this;
     }
-
+    @Step("Click on the search button.")
     public HomePage clickSearchBtn() {
         getSearchBtn().click();
         waitUrlContains(driver, "/shop/");
         return this;
     }
-
+    @Step("Click on consent location button.")
     public HomePage clickConsentLocationBtn() {
         getConsentLocationBtn().click();
         return this;
