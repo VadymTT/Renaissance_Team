@@ -75,4 +75,11 @@ public class ShopPage extends ShopElements {
         getProfitablyBuyBtn().click();
         return this;
     }
+
+    @Step("Click on promotions button on the sorting panel.")
+    public ShopPage clickPromotionsBtn() {
+        getPromotionsBtn().click();
+        sleep(800);
+        return this;
+    }
 }

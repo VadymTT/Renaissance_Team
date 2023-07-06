@@ -4,6 +4,8 @@ import elements.HomeElements;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
+import static base.CommonActions.waitUrlContains;
+
 public class HomePage extends HomeElements {
 
     public HomePage(WebDriver driver) {
@@ -26,13 +28,19 @@ public class HomePage extends HomeElements {
         getCategoryTittle(category).click();
         return this;
     }
-    public HomePage clickSearchField(String product) {
+    public HomePage entryOnSearchField(String product) {
         getSearchField().sendKeys(product);
         return this;
     }
 
     public HomePage clickSearchBtn() {
         getSearchBtn().click();
+        waitUrlContains(driver, "/shop/");
+        return this;
+    }
+
+    public HomePage clickConsentLocationBtn() {
+        getConsentLocationBtn().click();
         return this;
     }
 }
