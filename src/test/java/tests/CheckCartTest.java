@@ -13,7 +13,7 @@ public class CheckCartTest extends AbstractBaseTest {
     public static final String IPHONE = "iPhone 14 Pro Max";
 
     @Test
-    @Description("Verify the functionality of checking the cart")
+    @Description("/TR-2 / Test Case 1.Verify the functionality of checking the cart")
     public void checkStoreLocationSelection() {
         HomePage homePage = new HomePage(driver);
         CartPage cartPage = new CartPage(driver);
