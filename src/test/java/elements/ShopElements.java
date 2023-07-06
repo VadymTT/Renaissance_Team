@@ -23,6 +23,8 @@ public class ShopElements extends AbstractBasePage {
     private static final String PRICE_OF_ALL_PRODUCTS = "//div[@class='columns']//p[@class='card__price-actual" +
             " card__price-actual--action']";
     private static final String FIRST_PRODUCT_CARD_NAME = "(//div[@class='card__name'])[1]//a";
+    private static final String CLOSE_REGIONAL_BANNER_BTN = "//div[@class='_lf1rdL']";
+    private static final String PROFITABLY_BUY_BTN = "//a[contains(text(), 'Вигідно купити')]";
 
     protected WebElement getCategoryByDataAlt(String category) {
         return waitUntilElementToBeVisibleByXpath(String.format(CATEGORY_BY_DATA_ALT, category));
@@ -62,5 +64,13 @@ public class ShopElements extends AbstractBasePage {
 
     protected WebElement getFirstProductCardName() {
         return waitUntilElementToBeClickable(FIRST_PRODUCT_CARD_NAME);
+    }
+
+    protected WebElement getCloseRegionalBannerBtn() {
+        return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
+    }
+
+    protected WebElement getProfitablyBuyBtn() {
+        return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
     }
 }
