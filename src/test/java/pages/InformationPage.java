@@ -48,7 +48,7 @@ public class InformationPage extends InformationPageElements {
     @Step("Close support service pop-up.")
     public InformationPage closeSupportServicePopup() {
         getCloseSupportServiceBtn().click();
-        sleep(0.5);
+        sleep(500);
         return this;
     }
 }

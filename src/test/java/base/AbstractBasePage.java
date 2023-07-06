@@ -11,15 +11,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.List;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 @Slf4j
 abstract public class AbstractBasePage extends AbstractBase {
 
     protected WebDriver driver;
-    protected WebDriverWait wait;
+    protected static WebDriverWait wait;
     protected Actions actions;
     private int BASE_WAIT = 5000;
 
@@ -35,6 +35,10 @@ abstract public class AbstractBasePage extends AbstractBase {
 
     protected WebElement waitUntilElementToBeClickable(String locator) {
         return wait.until(elementToBeClickable(By.xpath(locator)));
+    }
+
+    protected List<WebElement> waitUntilPresenceOfAllElementsByXpath(String locator) {
+        return wait.until(presenceOfAllElementsLocatedBy(By.xpath(locator)));
     }
 
     public boolean isCurrentUrlDisplayed(WebDriver driver, String url) {
@@ -56,7 +60,7 @@ abstract public class AbstractBasePage extends AbstractBase {
         driver.switchTo().window(tabs.get(tabNumber - 1));
     }
 
-    protected void moveCursor(WebElement element) {
+    protected void moveCursor(WebElement element, WebDriver driver) {
         actions.moveToElement(element).build().perform();
     }
 
