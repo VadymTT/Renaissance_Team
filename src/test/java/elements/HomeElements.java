@@ -4,22 +4,21 @@ import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePageElements extends AbstractBasePage {
+public class HomeElements extends AbstractBasePage {
 
-    public HomePageElements(WebDriver driver) {
+    public HomeElements(WebDriver driver) {
         super(driver);
     }
 
-    private static final String CONFIRMATION_OF_LOCATION_BUTTON = "//button[text()= 'інший']";
     private static final String EXPERT_SUPPORT_TITTLE = "//a[@title='Експертна підтримка']";
+    private static final String CONFIRMATION_OF_ANOTHER_LOCATION_BTN = "//button[text()= 'інший']";
     private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
     private static final String HEADER_LOGO = "//a[@class='header__logo']";
     private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
     private static final String LOGO_BUTTON = "//div[@class='nav']//a[@href='/store/man']";
-    private static final String CATALOG_OPEN_BTN = "/..//a[@class='nav__heading'][contains(@href,'vzutta')]";
 
-    public WebElement getConfirmationOfLocationButton() {
-        return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_LOCATION_BUTTON);
+    public WebElement getConfirmationOfAnotherLocationBtn() {
+        return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_ANOTHER_LOCATION_BTN);
     }
 
     protected WebElement getExpertSupport() {
@@ -42,7 +41,4 @@ public class HomePageElements extends AbstractBasePage {
         return waitUntilElementToBeClickable(LOGO_BUTTON);
     }
 
-    protected WebElement catalogOpenerBtn() {
-        return waitUntilElementToBeClickable(CATALOG_OPEN_BTN);
-    }
 }
