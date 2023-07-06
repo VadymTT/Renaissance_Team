@@ -13,7 +13,7 @@ public class ProductComparisonTest extends AbstractBaseTest {
     public static final String SAMSUNG = "Samsung Galaxy S23 Ultra";
 
     @Test
-    @Description("Verify the functionality of product comparison")
+    @Description("TR-6 / Test Case 2.Verify the functionality of product comparison")
     public void checkStoreLocationSelection() {
         HomePage homePage = new HomePage(driver);
         ShopPage shopPage = new ShopPage(driver);
