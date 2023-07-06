@@ -4,9 +4,14 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CommonActions extends AbstractBase {
 
+    private static final int BASE_WAIT = 15;
     protected static WebDriver driver;
     private final Dimension dimension = new Dimension(WIDTH, HEIGHT);
     private static final int WIDTH = 1680;
@@ -34,5 +39,15 @@ public class CommonActions extends AbstractBase {
 
     public void scrollToElement(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static boolean waitUrlContains(WebDriver driver, String url) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(BASE_WAIT));
+            wait.until(ExpectedConditions.urlContains(url));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

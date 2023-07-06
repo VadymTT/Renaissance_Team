@@ -10,7 +10,7 @@ public class InitialTest extends AbstractBaseTest {
     public void elementaryTest() {
     HomePage homePage = new HomePage(driver);
 
-        homePage.logoBtnClick();
+        homePage.getCatalogBtn();
 
     }
 }
