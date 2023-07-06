@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class LocalityPage extends LocalityElements {
+
     public LocalityPage(WebDriver driver) {
         super(driver);
     }
@@ -14,16 +15,16 @@ public class LocalityPage extends LocalityElements {
     public LocalityPage enterCityName(String city) {
         getInputCityName().sendKeys(Keys.COMMAND + "A");
         getInputCityName().sendKeys(Keys.CLEAR);
-        sleep(4);
+        sleep(4000);
         getInputCityName().sendKeys(city);
-        sleep(4);
+        sleep(2000);
         return this;
     }
 
     @Step("Click on {number} the first one locality of city from the drop-down list.")
     public LocalityPage clickLocalityOfCity(String number) {
         getLocalityOfCity(number).click();
-        sleep(4);
+        sleep(4000);
         return this;
     }
 
@@ -33,27 +34,9 @@ public class LocalityPage extends LocalityElements {
         return this;
     }
 
-    @Step("Click on Close Regional Banner button.")
-    public LocalityPage clickCloseRegionalBannerBtn() {
-        getCloseRegionalBannerBtn().click();
-        return this;
-    }
-
-    @Step("Click on Profitably Buy button.")
-    public LocalityPage clickProfitablyBuyBtn() {
-        getProfitablyBuyBtn().click();
-        return this;
-    }
-
-    @Step("Click on {number} Buy button.")
-    public LocalityPage clickBuyBtn(String number) {
-        getBuyBtn(number).click();
-        return this;
-    }
-
-    @Step("Click on Complete Purchase button.")
-    public LocalityPage clickCompletePurchaseBtn() {
-        getCompletePurchaseBtn().click();
-        return this;
+    @Step("Get {title} attribute of actual selected store address in the header.")
+    public String getTextActualSelectedStoreAddress() {
+        sleep(4000);
+        return getActualSelectedStoreAddress().getAttribute("title");
     }
 }

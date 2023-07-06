@@ -4,8 +4,7 @@ import base.AbstractBaseTest;
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.HomePage;
-import pages.LocalityPage;
+import pages.*;
 
 public class StoreLocationSelectionTests extends AbstractBaseTest {
 
@@ -14,6 +13,10 @@ public class StoreLocationSelectionTests extends AbstractBaseTest {
     public void checkStoreLocationSelection() {
         HomePage homePage = new HomePage(driver);
         LocalityPage localityPage = new LocalityPage(driver);
+        ShopPage shopPage = new ShopPage(driver);
+        ProductCardPage productCardPage = new ProductCardPage(driver);
+        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
+        OrderMakingPage orderMakingPage = new OrderMakingPage(driver);
         SoftAssert softAssert = new SoftAssert();
 
         homePage
@@ -37,29 +40,29 @@ public class StoreLocationSelectionTests extends AbstractBaseTest {
         localityPage
                 .clickSelectStoreBtn("1");
 
-        softAssert.assertEquals(localityPage.getActualSelectedStoreAddress().getAttribute("title"),
+        softAssert.assertEquals(localityPage.getTextActualSelectedStoreAddress(),
                 selectStoreAddress, "Selected store address is not matching");
 
-        localityPage
+        shopPage
                 .clickCloseRegionalBannerBtn()
                 .clickProfitablyBuyBtn();
 
-        String storeAddressForDelivery = localityPage.getYourStoreAddressForDelivery().getText();
+        String storeAddressForDelivery = productCardPage.getTextFromYourStoreAddressForDelivery();
 
         softAssert.assertEquals(storeAddressForDelivery,
-                localityPage.getActualSelectedStoreAddress().getAttribute("title"),
+                productCardPage.getActualSelectedStoreAddress().getAttribute("title"),
                 "Store Address for delivery is not matching");
 
-        localityPage
+        productCardPage
                 .clickBuyBtn("1");
 
-        softAssert.assertEquals(localityPage.getStoreAddressInCart().getAttribute("title"),
+        softAssert.assertEquals(shoppingCartPage.getStoreAddressInCart().getAttribute("title"),
                 storeAddressForDelivery, "Store Address in cart is not matching");
 
-        localityPage
+        shoppingCartPage
                 .clickCompletePurchaseBtn();
 
-        softAssert.assertEquals(localityPage.getPlaceholderStoreAddressForOrdering().getAttribute("placeholder"),
+        softAssert.assertEquals(orderMakingPage.getPlaceholderStoreAddressForOrdering().getAttribute("placeholder"),
                 "Вінниця", "Address is not matching");
         softAssert.assertAll();
     }

@@ -11,8 +11,23 @@ public class HomeElements extends AbstractBasePage {
     }
 
     private static final String CONFIRMATION_OF_ANOTHER_LOCATION_BUTTON = "//button[text()= 'інший']";
+    private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
+    private static final String HEADER_LOGO = "//a[@class='header__logo']";
+    private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
 
     public WebElement getConfirmationOfAnotherLocationButton() {
         return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_ANOTHER_LOCATION_BUTTON);
+    }
+
+    public WebElement getCatalogBtn() {
+        return waitUntilElementToBeVisibleByXpath(CATALOG_BTN);
+    }
+
+    protected WebElement getCategoryTittle(String category) {
+        return waitUntilElementToBeVisibleByXpath(String.format(TITTLE_OF_CATEGORY, category));
+    }
+
+    public WebElement getHeaderLogo() {
+        return waitUntilElementToBeVisibleByXpath(HEADER_LOGO);
     }
 }
