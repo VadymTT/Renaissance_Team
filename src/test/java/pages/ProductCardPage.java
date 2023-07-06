@@ -18,7 +18,7 @@ public class ProductCardPage extends ProductCardElements {
 
     @Step("Get {text} from chosen store address for delivery.")
     public String getTextFromYourStoreAddressForDelivery() {
-        return getYourStoreAddressForDelivery().getText();
+        return getYourStoreAddressForDeliveryRow().getText();
     }
 
     @Step("Click on {number} Buy button.")
@@ -26,5 +26,4 @@ public class ProductCardPage extends ProductCardElements {
         getBuyBtn(number).click();
         return this;
     }
-
 }

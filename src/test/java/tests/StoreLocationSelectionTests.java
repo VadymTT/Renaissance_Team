@@ -20,22 +20,22 @@ public class StoreLocationSelectionTests extends AbstractBaseTest {
         SoftAssert softAssert = new SoftAssert();
 
         homePage
-                .clickConfirmationOfAnotherLocationButton();
+                .clickConfirmationOfAnotherLocationBtn();
         localityPage
                 .enterCityName("Рівне")
-                .clickLocalityOfCity("1");
+                .clickLocalityOfCityRow("1");
 
-        softAssert.assertTrue(localityPage.getStoreAddressOfSelectedLocality().getText().contains("Рівне"),
+        softAssert.assertTrue(localityPage.getStoreAddressOfSelectedLocalityRow().getText().contains("Рівне"),
                 "Location filter doesn't work correctly 1.");
 
         localityPage
                 .enterCityName("Вінниця")
-                .clickLocalityOfCity("1");
+                .clickLocalityOfCityRow("1");
 
-        softAssert.assertTrue(localityPage.getStoreAddressOfSelectedLocality().getText().contains("Вінниц"),
+        softAssert.assertTrue(localityPage.getStoreAddressOfSelectedLocalityRow().getText().contains("Вінниц"),
                 "Location filter doesn't work correctly 2.");
 
-        String selectStoreAddress = localityPage.getStoreAddressOfSelectedLocality().getText();
+        String selectStoreAddress = localityPage.getStoreAddressOfSelectedLocalityRow().getText();
 
         localityPage
                 .clickSelectStoreBtn("1");
@@ -50,13 +50,13 @@ public class StoreLocationSelectionTests extends AbstractBaseTest {
         String storeAddressForDelivery = productCardPage.getTextFromYourStoreAddressForDelivery();
 
         softAssert.assertEquals(storeAddressForDelivery,
-                productCardPage.getActualSelectedStoreAddress().getAttribute("title"),
+                productCardPage.getActualSelectedStoreAddressRow().getAttribute("title"),
                 "Store Address for delivery is not matching");
 
         productCardPage
                 .clickBuyBtn("1");
 
-        softAssert.assertEquals(shoppingCartPage.getStoreAddressInCart().getAttribute("title"),
+        softAssert.assertEquals(shoppingCartPage.getStoreAddressRowInCart().getAttribute("title"),
                 storeAddressForDelivery, "Store Address in cart is not matching");
 
         shoppingCartPage

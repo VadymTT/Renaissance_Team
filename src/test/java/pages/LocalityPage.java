@@ -13,17 +13,17 @@ public class LocalityPage extends LocalityElements {
 
     @Step("Clear and enter the {city name} in input field.")
     public LocalityPage enterCityName(String city) {
-        getInputCityName().sendKeys(Keys.COMMAND + "A");
-        getInputCityName().sendKeys(Keys.CLEAR);
+        getCityNameField().sendKeys(Keys.COMMAND + "A");
+        getCityNameField().sendKeys(Keys.CLEAR);
         sleep(4000);
-        getInputCityName().sendKeys(city);
+        getCityNameField().sendKeys(city);
         sleep(2000);
         return this;
     }
 
     @Step("Click on {number} the first one locality of city from the drop-down list.")
-    public LocalityPage clickLocalityOfCity(String number) {
-        getLocalityOfCity(number).click();
+    public LocalityPage clickLocalityOfCityRow(String number) {
+        getLocalityOfCityRow(number).click();
         sleep(4000);
         return this;
     }
@@ -37,6 +37,6 @@ public class LocalityPage extends LocalityElements {
     @Step("Get {title} attribute of actual selected store address in the header.")
     public String getTextActualSelectedStoreAddress() {
         sleep(4000);
-        return getActualSelectedStoreAddress().getAttribute("title");
+        return getActualSelectedStoreAddressRow().getAttribute("title");
     }
 }

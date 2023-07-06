@@ -16,8 +16,8 @@ public class HomePage extends HomeElements {
     }
 
     @Step("Click on Another Btn in Location Conformation pop-up window.")
-    public HomePage clickConfirmationOfAnotherLocationButton() {
-        getConfirmationOfAnotherLocationButton().click();
+    public HomePage clickConfirmationOfAnotherLocationBtn() {
+        getConfirmationOfAnotherLocationBtn().click();
         return this;
     }
 
