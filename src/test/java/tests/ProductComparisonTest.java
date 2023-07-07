@@ -42,8 +42,8 @@ public class ProductComparisonTest extends AbstractBaseTest {
 
         comparePage
                 .clickCompareButton()
-                .clickThoseThatDifferBtn()
-                .clickAddModel();
+                .clickThoseThatDifferButton()
+                .clickAddModelButton();
 
         shopPage
                 .clickSecondItemInListCompare()
@@ -51,7 +51,7 @@ public class ProductComparisonTest extends AbstractBaseTest {
 
         comparePage
                 .clickCompareButton()
-                .clickClearList();
+                .clickClearListButton();
 
         String pageSource = getPageSource();
 
