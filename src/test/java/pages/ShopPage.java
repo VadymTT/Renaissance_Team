@@ -12,6 +12,61 @@ public class ShopPage extends ShopElements {
         super(driver);
     }
 
+    @Step("Click first buy button.")
+    public ShopPage clickBuyButton() {
+        getBuyButton().click();
+        return this;
+    }
+
+    @Step("Click second buy button.")
+    public ShopPage clickSecondBuyButton() {
+        getSecondBuyButton().click();
+        return this;
+    }
+
+    @Step("Move to first card.")
+    public ShopPage moveToCardInfo() {
+        moveCursor(getCardInfo(), driver);
+        return this;
+    }
+
+    @Step("Move to second card.")
+    public ShopPage moveToSecondCardInfo() {
+        moveCursor(getSecondCardInfo(), driver);
+        return this;
+    }
+
+    @Step("Click continue purchasing.")
+    public ShopPage clickContinuePurchasing() {
+        getContinuePurchasing().click();
+        return this;
+    }
+
+    @Step("Replace for first product price.")
+    public String getTextProductPrice() {
+        return getProductPrice().getText().replace(" ", "").replace("₴", "");
+    }
+
+    @Step("Replace for second product price.")
+    public String getTextSecondProductPrice() {
+        return getSecondProductPrice().getText().replace(" ", "").replace("₴", "");
+    }
+
+    @Step("Replace for first product price in cart.")
+    public String getTextProductPriceInCart() {
+        return getProductPriceInCart().getText().replace(" ", "").replace("₴", "");
+    }
+
+    @Step("Replace for second product price in cart.")
+    public String getTextSecondProductPriceInCart() {
+        return getSecondProductPriceInCart().getText().replace(" ", "").replace("₴", "");
+    }
+
+    @Step("Replace for sum product price.")
+    public String getTextSummaryProductPrice() {
+        return getSummaryProductPrice().getText().replace(" ", "").replace("₴", "");
+    }
+
     @Step("Click on category {category}.")
     public ShopPage clickOnCategory(String category) {
         getCategoryByDataAlt(category).click();
@@ -65,14 +120,15 @@ public class ShopPage extends ShopElements {
     }
 
     @Step("Click on Close Regional Banner button.")
-    public ShopPage clickCloseRegionalBannerBtn() {
-        getCloseRegionalBannerBtn().click();
+    public ShopPage clickCloseRegionalBannerButton() {
+        getCloseRegionalBannerButton().click();
         return this;
     }
 
     @Step("Click on Profitably Buy button.")
-    public ShopPage clickProfitablyBuyBtn() {
-        getProfitablyBuyBtn().click();
+    public ShopPage clickProfitablyBuyButton() {
+        getProfitablyBuyButton().click();
         return this;
     }
 }
+
