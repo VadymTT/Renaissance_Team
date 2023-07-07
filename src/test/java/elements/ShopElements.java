@@ -19,10 +19,12 @@ public class ShopElements extends AbstractBasePage {
     private static final String MAX_PRICE_INPUT = "(//input[@data-slider-id='price'])[2]";
     private static final String SPIN_SPEED_DROPDOWN = "//div[@data-sort='700']/span";
     private static final String SPIN_SPEED_SELECT = "//input[@data-filter-name='%s об./хв']//following-sibling::span";
-    private static final String CARD_CHARACTERISTICS= "//div[@class='columns']//ul[@class='card__characteristics']/li[last()]";
+    private static final String CARD_CHARACTERISTICS = "//div[@class='columns']//ul[@class='card__characteristics']/li[last()]";
     private static final String PRICE_OF_ALL_PRODUCTS = "//div[@class='columns']//p[@class='card__price-actual" +
             " card__price-actual--action']";
     private static final String FIRST_PRODUCT_CARD_NAME = "(//div[@class='card__name'])[1]//a";
+    private static final String CLOSE_REGIONAL_BANNER_BTN = "//div[@class='_lf1rdL']";
+    private static final String PROFITABLY_BUY_BTN = "//a[contains(text(), 'Вигідно купити')]";
 
     //shop page
     private static final String PRODUCT_PRICE = "(//p[@class='card__price-actual card__price-actual--action']/span[@class='card__price-sum'])[1]";
@@ -73,6 +75,7 @@ public class ShopElements extends AbstractBasePage {
     public List<WebElement> getCardCharacteristics() {
         return waitUntilPresenceOfAllElementsByXpath(CARD_CHARACTERISTICS);
     }
+
     protected WebElement getFirstProductCardName() {
         return waitUntilElementToBeClickable(FIRST_PRODUCT_CARD_NAME);
     }
@@ -118,4 +121,12 @@ public class ShopElements extends AbstractBasePage {
     public WebElement getContinuePurchasing() {
         return waitUntilElementToBeVisibleByXpath(CONTINUE_PURCHASING);
     }
-}
+
+        protected WebElement getCloseRegionalBannerBtn () {
+            return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
+        }
+
+        protected WebElement getProfitablyBuyBtn () {
+            return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
+        }
+    }
