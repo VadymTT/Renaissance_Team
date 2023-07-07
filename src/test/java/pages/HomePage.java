@@ -15,7 +15,7 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-
+    @Step("Click car icon button.")
     public HomePage clickCartIconButton() {
         getCartIconButton().click();
         return this;
@@ -32,11 +32,13 @@ public class HomePage extends HomeElements {
         return this;
     }
 
+    @Step("Send keys on search field.")
     public HomePage sendKeysSearchField(String send) {
         getSearchField().sendKeys(send);
         return this;
     }
 
+    @Step("Click search button.")
     public HomePage clickSearchButton() {
         getSearchButton().click();
         return this;

@@ -34,8 +34,8 @@ public class ShopElements extends AbstractBasePage {
     private static final String SUMMARY_PRODUCT_PRICE = "//span[@class='basket-purchase__send-sum--new']";
 
     //mobile page
-    private static final String BUY_BUTTON = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[1]";
-    private static final String SECOND_BUY_BUTTON = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[2]";
+    private static final String BUY_BTN = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[1]";
+    private static final String SECOND_BUY_BTN = "(//button[@class='add-product card__button btn btn--yellow  js-btn--buy '])[2]";
     private static final String CARD_INFO = "(//div[@class='card__info'])[1]";
     private static final String SECOND_CARD_INFO = "(//div[@class='card__info'])[2]";
     private static final String CONTINUE_PURCHASING = "//button[@class='btn btn--3 btn--white']";
@@ -103,11 +103,11 @@ public class ShopElements extends AbstractBasePage {
 
     //mobile page
     public WebElement getBuyButton() {
-        return waitUntilElementToBeClickable(BUY_BUTTON);
+        return waitUntilElementToBeClickable(BUY_BTN);
     }
 
     public WebElement getSecondBuyButton() {
-        return waitUntilElementToBeClickable(SECOND_BUY_BUTTON);
+        return waitUntilElementToBeClickable(SECOND_BUY_BTN);
     }
 
     public WebElement getCardInfo() {
@@ -122,11 +122,11 @@ public class ShopElements extends AbstractBasePage {
         return waitUntilElementToBeVisibleByXpath(CONTINUE_PURCHASING);
     }
 
-        protected WebElement getCloseRegionalBannerBtn () {
+        protected WebElement getCloseRegionalBannerButton () {
             return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
         }
 
-        protected WebElement getProfitablyBuyBtn () {
+        protected WebElement getProfitablyBuyButton () {
             return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
         }
     }

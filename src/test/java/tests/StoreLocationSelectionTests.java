@@ -44,8 +44,8 @@ public class StoreLocationSelectionTests extends AbstractBaseTest {
                 selectStoreAddress, "Selected store address is not matching");
 
         shopPage
-                .clickCloseRegionalBannerBtn()
-                .clickProfitablyBuyBtn();
+                .clickCloseRegionalBannerButton()
+                .clickProfitablyBuyButton();
 
         String storeAddressForDelivery = productCardPage.getTextFromYourStoreAddressForDelivery();
 
