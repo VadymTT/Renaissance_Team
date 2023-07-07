@@ -86,8 +86,8 @@ public class ShopPage extends ShopElements {
     }
 
     @Step("Click compare icon.")
-    public ShopPage clickCompareIcon() {
-        getCompareIcon().click();
+    public ShopPage clickCompareIconButton() {
+        getCompareIconButton().click();
         return this;
     }
 

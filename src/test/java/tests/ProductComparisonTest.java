@@ -27,7 +27,7 @@ public class ProductComparisonTest extends AbstractBaseTest {
 
         shopPage
                 .clickFirstIphoneItemInListCompare()
-                .clickCompareIcon();
+                .clickCompareIconButton();
 
         comparePage
                 .clickAddMoreButton();
@@ -38,7 +38,7 @@ public class ProductComparisonTest extends AbstractBaseTest {
 
         shopPage
                 .clickFirstSamsungItemInListCompare()
-                .clickCompareIcon();
+                .clickCompareIconButton();
 
         comparePage
                 .clickCompareButton()
@@ -47,7 +47,7 @@ public class ProductComparisonTest extends AbstractBaseTest {
 
         shopPage
                 .clickSecondItemInListCompare()
-                .clickCompareIcon();
+                .clickCompareIconButton();
 
         comparePage
                 .clickCompareButton()

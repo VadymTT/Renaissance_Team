@@ -43,7 +43,7 @@ public class ShopElements extends AbstractBasePage {
     private static final String FIRST_IPHONE_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003265676']";
     private static final String FIRST_SAMSUNG_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003364310']";
     private static final String SECOND_ITEM_IN_LIST_COMPARE = "(//div[@class='card__add'])[2]/a[@data-tooltip='bottom']";
-    private static final String COMPARE_ICON = "//span[@class='header__compare-link-icon']";
+    private static final String COMPARE_ICON_BTN = "//span[@class='header__compare-link-icon']";
 
     protected WebElement getCategoryByDataAlt(String category) {
         return waitUntilElementToBeVisibleByXpath(String.format(CATEGORY_BY_DATA_ALT, category));
@@ -147,8 +147,8 @@ public class ShopElements extends AbstractBasePage {
         return waitUntilElementToBeClickable(SECOND_ITEM_IN_LIST_COMPARE);
     }
 
-    public WebElement getCompareIcon() {
-        return waitUntilElementToBeClickable(COMPARE_ICON);
+    public WebElement getCompareIconButton() {
+        return waitUntilElementToBeClickable(COMPARE_ICON_BTN);
     }
 
     protected WebElement getCloseRegionalBannerBtn() {
