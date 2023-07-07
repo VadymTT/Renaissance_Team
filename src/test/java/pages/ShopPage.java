@@ -144,14 +144,14 @@ public class ShopPage extends ShopElements {
     }
 
     @Step("Click on Close Regional Banner button.")
-    public ShopPage clickCloseRegionalBannerBtn() {
-        getCloseRegionalBannerBtn().click();
+    public ShopPage clickCloseRegionalBannerButton() {
+        getCloseRegionalBannerButton().click();
         return this;
     }
 
     @Step("Click on Profitably Buy button.")
-    public ShopPage clickProfitablyBuyBtn() {
-        getProfitablyBuyBtn().click();
+    public ShopPage clickProfitablyBuyButton() {
+        getProfitablyBuyButton().click();
         return this;
     }
 }
