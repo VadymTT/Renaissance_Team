@@ -1,10 +1,12 @@
 package pages;
 
-import elements.HomePageElements;
+import elements.HomeElements;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends HomePageElements {
+public class HomePage extends HomeElements {
+
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -14,6 +16,7 @@ public class HomePage extends HomePageElements {
         return this;
     }
 
+
     public HomePage clickCartIconButton() {
         getCartIconButton().click();
         return this;
@@ -21,6 +24,12 @@ public class HomePage extends HomePageElements {
 
     public HomePage clickConfirmationOfLocationButton() {
         getConfirmationOfLocationButton().click();
+        return this;
+    }
+
+    @Step("Click on Another Btn in Location Conformation pop-up window.")
+    public HomePage clickConfirmationOfAnotherLocationBtn() {
+        getConfirmationOfAnotherLocationBtn().click();
         return this;
     }
 

@@ -4,8 +4,9 @@ import base.AbstractBasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePageElements extends AbstractBasePage {
-    public HomePageElements(WebDriver driver) {
+public class HomeElements extends AbstractBasePage {
+
+    public HomeElements(WebDriver driver) {
         super(driver);
     }
 
@@ -13,6 +14,7 @@ public class HomePageElements extends AbstractBasePage {
     private static final String SEARCH_FIELD = "//input[@class='_JcImSJ']";
     private static final String SEARCH_BUTTON = "//button[@class='_cvO7u1']";
     private static final String CART_ICON_BUTTON = "//div[@class='header__cart']";
+    private static final String CONFIRMATION_OF_ANOTHER_LOCATION_BTN = "//button[text()= 'інший']";
     private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
     private static final String HEADER_LOGO = "//a[@class='header__logo']";
     private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
@@ -20,6 +22,10 @@ public class HomePageElements extends AbstractBasePage {
     //home elements
     public WebElement getConfirmationOfLocationButton() {
         return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_LOCATION_BUTTON);
+    }
+
+    public WebElement getConfirmationOfAnotherLocationBtn() {
+        return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_ANOTHER_LOCATION_BTN);
     }
 
     public WebElement getCartIconButton() {
