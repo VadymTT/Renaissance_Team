@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends HomeElements {
 
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -15,7 +14,6 @@ public class HomePage extends HomeElements {
         getCatalogBtn().click();
         return this;
     }
-
 
     public HomePage clickCartIconButton() {
         getCartIconButton().click();

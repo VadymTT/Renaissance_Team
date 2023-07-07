@@ -4,6 +4,7 @@ import elements.ComparePageElements;
 import org.openqa.selenium.WebDriver;
 
 public class ComparePage extends ComparePageElements {
+
     public ComparePage(WebDriver driver) {
         super(driver);
     }

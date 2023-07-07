@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ProductCardElements extends AbstractBasePage {
+
     public ProductCardElements(WebDriver driver) {
         super(driver);
     }

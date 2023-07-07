@@ -63,7 +63,7 @@ public class CheckCartTest extends AbstractBaseTest {
 
         cartPage.
                 clickDeleteAllProducts()
-                .clickRemoveFromCartVerificationCloseBtn()
+                .clickRemoveFromCartVerificationCloseButton()
                 .clickDeleteAllProducts()
                 .clickNoButtonInVerificationDelete()
                 .clickMakePurchase();

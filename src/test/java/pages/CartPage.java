@@ -4,6 +4,7 @@ import elements.CartPageElements;
 import org.openqa.selenium.WebDriver;
 
 public class CartPage extends CartPageElements {
+
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -23,8 +24,8 @@ public class CartPage extends CartPageElements {
         return this;
     }
 
-    public CartPage clickRemoveFromCartVerificationCloseBtn() {
-        getRemoveFromCartVerificationCloseBtn().click();
+    public CartPage clickRemoveFromCartVerificationCloseButton() {
+        getRemoveFromCartVerificationCloseButton().click();
         return this;
     }
 
