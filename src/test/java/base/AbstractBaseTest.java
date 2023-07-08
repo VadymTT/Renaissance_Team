@@ -27,4 +27,8 @@ abstract public class AbstractBaseTest extends AbstractBase{
     public void closeBrowser() {
         driver.quit();
     }
+
+    public String getCurrentUrl() {
+        return driver.getCurrentUrl();
+    }
 }
