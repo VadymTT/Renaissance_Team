@@ -14,7 +14,7 @@ public class HomePage extends HomeElements {
         getCatalogBtn().click();
         return this;
     }
-
+    @Step("Click logo icon button.")
     public HomePage logoBtnClick() {
         getLogoBtn().click();
         return this;
@@ -34,7 +34,6 @@ public class HomePage extends HomeElements {
     @Step("Click on Another Btn in Location Conformation pop-up window.")
     public HomePage clickConfirmationOfAnotherLocationBtn() {
         getConfirmationOfAnotherLocationBtn().click();
-
         return this;
     }
 
