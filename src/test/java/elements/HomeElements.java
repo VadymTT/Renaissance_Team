@@ -10,6 +10,10 @@ public class HomeElements extends AbstractBasePage {
         super(driver);
     }
 
+    private static final String CONFIRMATION_OF_LOCATION_BUTTON = "//button[@class='btn btn--xsmall btn--white _lyk2tB _DE7oBo']";
+    private static final String SEARCH_FIELD = "//input[@class='_JcImSJ']";
+    private static final String SEARCH_BUTTON = "//button[@class='_cvO7u1']";
+    private static final String CART_ICON_BUTTON = "//div[@class='header__cart']";
     private static final String CONFIRMATION_OF_ANOTHER_LOCATION_BTN = "//button[text()= 'інший']";
     private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
     private static final String HEADER_LOGO = "//a[@class='header__logo']";
@@ -18,8 +22,26 @@ public class HomeElements extends AbstractBasePage {
     private static final String SEARCH_BTN = "//form[@data-is='Search']/button[@class='_cvO7u1']";
     private static final String CONSENT_LOCATION_BTN = "//button[@class='btn btn--xsmall btn--white _lyk2tB _DE7oBo']";
 
+    //home elements
+    public WebElement getConfirmationOfLocationButton() {
+        return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_LOCATION_BUTTON);
+    }
+
     public WebElement getConfirmationOfAnotherLocationBtn() {
         return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_ANOTHER_LOCATION_BTN);
+    }
+
+    public WebElement getCartIconButton() {
+        return waitUntilElementToBeClickable(CART_ICON_BUTTON);
+    }
+
+    //search field elements
+    public WebElement getSearchField() {
+        return waitUntilElementToBeVisibleByXpath(SEARCH_FIELD);
+    }
+
+    public WebElement getSearchButton() {
+        return waitUntilElementToBeVisibleByXpath(SEARCH_BUTTON);
     }
 
     public WebElement getCatalogBtn() {
