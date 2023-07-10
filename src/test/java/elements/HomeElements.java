@@ -14,6 +14,7 @@ public class HomeElements extends AbstractBasePage {
     private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
     private static final String HEADER_LOGO = "//a[@class='header__logo']";
     private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
+    private static final String CONFIRMATION_OF_LOCATION_BTN = "//button[text()= 'Так']";
 
     public WebElement getConfirmationOfAnotherLocationBtn() {
         return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_ANOTHER_LOCATION_BTN);
@@ -29,5 +30,9 @@ public class HomeElements extends AbstractBasePage {
 
     public WebElement getHeaderLogo() {
         return waitUntilElementToBeVisibleByXpath(HEADER_LOGO);
+    }
+
+    protected WebElement getConformationOfLocationBtn() {
+        return waitUntilElementToBeClickable(CONFIRMATION_OF_LOCATION_BTN);
     }
 }

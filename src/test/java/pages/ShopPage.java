@@ -75,4 +75,41 @@ public class ShopPage extends ShopElements {
         getProfitablyBuyBtn().click();
         return this;
     }
+
+    @Step("Click on subcategory {subcategory} on the catalog.")
+    public ShopPage clickOnSubcategoryTitleBtn(String subcategory) {
+        getSubcategoryTitleBtn(subcategory).click();
+        return this;
+    }
+
+    @Step("Click on section {section} of subcategory on the catalog.")
+    public ShopPage clickSectionTitleOfSubcategoryBtn(String section) {
+        getSectionTitleOfSubcategoryBtn(section).click();
+        return this;
+    }
+
+    @Step("Click on Close Action Slider button.")
+    public ShopPage clickCloseActionSliderBtn() {
+        sleep(1000);
+        getCloseActionSliderBtn().click();
+        return this;
+    }
+
+    @Step("Click on {option} button of sorting panel.")
+    public ShopPage clickOnSortingPanelOptionBtn(String option) {
+        getSortingPanelOptionBtn(option).click();
+        return this;
+    }
+
+    @Step("Click on next pagination button.")
+    public ShopPage clickNextPaginationBtn() {
+        getNextPaginationBtn().click();
+        return this;
+    }
+
+    @Step("Click on the first page button.")
+    public ShopPage clickFirstPageBtn() {
+        getFirstPageBtn().click();
+        return this;
+    }
 }

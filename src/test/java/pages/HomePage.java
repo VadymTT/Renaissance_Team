@@ -10,7 +10,7 @@ public class HomePage extends HomeElements {
         super(driver);
     }
 
-    public HomePage catalogOpenBtnClick() {
+    public HomePage clickCatalogOpenBtn() {
         getCatalogBtn().click();
         return this;
     }
@@ -22,8 +22,14 @@ public class HomePage extends HomeElements {
     }
 
     @Step("Click on category on the main drop-down menu {category}")
-    public HomePage clickOnCategoryTittle(String category) {
+    public HomePage clickOnCategoryTittleBtn(String category) {
         getCategoryTittle(category).click();
+        return this;
+    }
+
+    @Step("Click on {yes} Btn in Location Conformation pop-up window.")
+    public HomePage сlickConformationOfLocationBtn() {
+        getConformationOfLocationBtn().click();
         return this;
     }
 }

@@ -22,8 +22,8 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
         SoftAssert softAssert = new SoftAssert();
 
         homePage
-                .catalogOpenBtnClick()
-                .clickOnCategoryTittle("Побутова техніка");
+                .clickCatalogOpenBtn()
+                .clickOnCategoryTittleBtn("Побутова техніка");
 
         shopPage
                 .clickOnCategory("Пральні машини")
