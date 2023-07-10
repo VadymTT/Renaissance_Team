@@ -62,5 +62,4 @@ public class HomeElements extends AbstractBasePage {
     protected WebElement getLogoBtn() {
         return waitUntilElementToBeClickable(LOGO_BUTTON);
     }
-
 }
