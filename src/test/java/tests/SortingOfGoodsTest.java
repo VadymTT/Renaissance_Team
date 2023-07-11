@@ -36,6 +36,7 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
         if (shopPage.getCloseActionSliderBtn().isDisplayed()) {
             shopPage.clickCloseActionSliderBtn();
         }
+
         shopPage
                 .clickSectionTitleOfSubcategoryBtn("Цегла облицювальна")
                 .clickOnSortingPanelOptionBtn("дешеві");
@@ -43,6 +44,7 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
         int lastPage = shopPage.getLastPageBtn();
 
         List<WebElement> listPrice;
+
         for (int i = 0; i < lastPage - 1; i++) {
             try {
                 listPrice = shopPage.getListOfProductPriceRow();
@@ -50,14 +52,17 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
                 break;
             }
             List<Double> dLPrice = new ArrayList<>();
+
             for (WebElement wElementOfPriceList : listPrice) {
                 dLPrice.add(Double.valueOf(wElementOfPriceList.getAttribute("title")
                         .replace("Ціна: ", "").replace(" ₴", "")));
             }
+
             for (int j = 0; j < dLPrice.size() - 1; j++) {
                 softAssert.assertTrue(dLPrice.get(j) <= dLPrice.get(j + 1));
                 System.out.println("Сортування від дешевих до дорогих: " + dLPrice.get(j) + "<=" + dLPrice.get(j + 1));
             }
+
             shopPage.clickNextPaginationBtn();
         }
 
@@ -71,17 +76,22 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
             } catch (TimeoutException e) {
                 break;
             }
+
             List<Double> dLPrice = new ArrayList<>();
+
             for (WebElement wElementOfPriceList : listPrice) {
                 dLPrice.add(Double.valueOf(wElementOfPriceList.getAttribute("title")
                         .replace("Ціна: ", "").replace(" ₴", "")));
             }
+
             for (int j = 0; j < dLPrice.size() - 1; j++) {
                 softAssert.assertTrue(dLPrice.get(j) >= dLPrice.get(j + 1));
                 System.out.println("Сортування від дорогих до дешевих: " + dLPrice.get(j) + ">=" + dLPrice.get(j + 1));
             }
+
             shopPage.clickNextPaginationBtn();
         }
+
         softAssert.assertAll();
     }
 }
