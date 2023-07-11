@@ -26,6 +26,15 @@ public class ShopElements extends AbstractBasePage {
     private static final String PROFITABLY_BUY_BTN = "//a[contains(text(), 'Вигідно купити')]";
     private static final String PROMOTIONS_BTN = "//div[@class='show-for-large']//a[@data-href='aktsii']";
     private static final String AMOUNT_OF_DISCOUNT = "//div[@class='columns']//span[@class='sticker action']";
+    private static final String TITLE_OF_SUBCATEGORY = "//a[contains(text(), '%s')]";
+    private static final String SECTION_TITLE_OF_SUBCATEGORY_BTN = "//section/a[contains(text(), '%s')]";
+    private static final String CLOSE_ACTION_SLIDER_BTN = "//button[@class='action-slider__close']";
+    private static final String SORTING_PANEL_OPTION_BTN = "//div[@class='show-for-large']//a[contains(text(), '%s')]";
+    private static final String LIST_OF_PRODUCT_PRICE_ROW = "//div[@class='card__price']//p[@class='card__price-actual ']";
+    private static final String LIST_OF_PAGINATION_BTN = "//a[@class='pagination__item ']";
+    private static final String NEXT_PAGINATION_BTN = "//a[@class='pagination__button pagination__button--next']";
+    private static final String LAST_PAGE_BTN = "//a[@href='/ua/shop/kirpich-oblitsovochnyy/deshevie/?PAGEN_1=11']";
+    private static final String FIRST_PAGE_BTN = "//a[@title='1']";
 
     //shop page
     private static final String PRODUCT_PRICE = "(//p[@class='card__price-actual card__price-actual--action']/span[@class='card__price-sum'])[1]";
@@ -42,7 +51,7 @@ public class ShopElements extends AbstractBasePage {
     private static final String CONTINUE_PURCHASING = "//button[@class='btn btn--3 btn--white']";
 
     protected WebElement getCategoryByDataAlt(String category) {
-        return waitUntilElementToBeVisibleByXpath(String.format(CATEGORY_BY_DATA_ALT, category));
+        return waitUntilElementToBeClickable(String.format(CATEGORY_BY_DATA_ALT, category));
     }
 
     protected WebElement getProductBrand(String brand) {
@@ -138,5 +147,39 @@ public class ShopElements extends AbstractBasePage {
     public List<WebElement> getAmountOfDiscount() {
         return waitUntilPresenceOfAllElementsByXpath(AMOUNT_OF_DISCOUNT);
     }
-}
 
+    protected WebElement getSubcategoryTitleBtn(String subcategory) {
+        return waitUntilElementToBeClickable(String.format(TITLE_OF_SUBCATEGORY, subcategory));
+    }
+
+    protected WebElement getSectionTitleOfSubcategoryBtn(String section) {
+        return waitUntilElementToBeClickable(String.format(SECTION_TITLE_OF_SUBCATEGORY_BTN, section));
+    }
+
+    public WebElement getCloseActionSliderBtn() {
+        return waitUntilElementToBeClickable(CLOSE_ACTION_SLIDER_BTN);
+    }
+
+    protected WebElement getSortingPanelOptionBtn(String option) {
+        return waitUntilElementToBeClickable(String.format(SORTING_PANEL_OPTION_BTN, option));
+    }
+
+    public List<WebElement> getListOfProductPriceRow() {
+        sleep(4000);
+        return waitUntilPresenceOfAllElementsByXpath(LIST_OF_PRODUCT_PRICE_ROW);
+    }
+
+    protected WebElement getNextPaginationBtn() {
+        return waitUntilElementToBeClickable(NEXT_PAGINATION_BTN);
+    }
+
+    public int getLastPageBtn() {
+        sleep(3000);
+        int lastPage = Integer.parseInt(waitUntilElementToBeVisibleByXpath(LAST_PAGE_BTN).getText());
+        return lastPage;
+    }
+
+    protected WebElement getFirstPageBtn() {
+        return waitUntilElementToBeClickable(FIRST_PAGE_BTN);
+    }
+}
