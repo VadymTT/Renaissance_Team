@@ -11,6 +11,7 @@ import pages.ShopPage;
 import java.util.List;
 
 public class SortingOfProductsByPromotionsTest extends AbstractBaseTest {
+    
     @Test
     @Description("TR-15/Test Case 3. Sorting of products by promotions.")
     public void checkSortingOfProductByPromotions() {
