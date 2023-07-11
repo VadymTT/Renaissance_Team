@@ -10,8 +10,13 @@ public class HomePage extends HomeElements {
         super(driver);
     }
 
-    public HomePage clickCatalogOpenBtn() {
+    public HomePage catalogOpenBtnClick() {
         getCatalogBtn().click();
+        return this;
+    }
+    @Step("Click logo icon button.")
+    public HomePage logoBtnClick() {
+        getLogoBtn().click();
         return this;
     }
 
@@ -53,6 +58,13 @@ public class HomePage extends HomeElements {
     @Step("Click on {yes} Btn in Location Conformation pop-up window.")
     public HomePage сlickConformationOfLocationBtn() {
         getConformationOfLocationBtn().click();
+        return this;
+    }
+
+    @Step("Click on “Експертна підтримка“ button in “Корисна інформація“ section in the footer.")
+    public HomePage clickExpertSupportBtn() {
+        scrollForElement(getExpertSupport(), driver);
+        getExpertSupport().click();
         return this;
     }
 }
