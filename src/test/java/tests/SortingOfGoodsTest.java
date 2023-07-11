@@ -22,7 +22,8 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
         SoftAssert softAssert = new SoftAssert();
 
         homePage
-                .clickConfirmationOfLocationButton()
+
+                .сlickConformationOfLocationBtn()
                 .catalogOpenBtnClick()
                 .clickOnCategoryTittleBtn("Ремонт");
 

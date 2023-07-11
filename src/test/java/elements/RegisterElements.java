@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class RegisterElements extends AbstractBasePage {
+
     public RegisterElements(WebDriver driver) {
         super(driver);
     }

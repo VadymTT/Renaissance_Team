@@ -67,6 +67,30 @@ public class ShopPage extends ShopElements {
         return getSummaryProductPrice().getText().replace(" ", "").replace("₴", "");
     }
 
+    @Step("Click first iphone in list.")
+    public ShopPage clickFirstIphoneItemInListCompare() {
+        getFirstIphoneItemInListCompare().click();
+        return this;
+    }
+
+    @Step("Click second samsung in list.")
+    public ShopPage clickFirstSamsungItemInListCompare() {
+        getFirstSamsungItemInListCompare().click();
+        return this;
+    }
+
+    @Step("Click second item in list.")
+    public ShopPage clickSecondItemInListCompare() {
+        getSecondItemInListCompare().click();
+        return this;
+    }
+
+    @Step("Click compare icon.")
+    public ShopPage clickCompareIconButton() {
+        getCompareIconButton().click();
+        return this;
+    }
+
     @Step("Click on category {category}.")
     public ShopPage clickOnCategory(String category) {
         getCategoryByDataAlt(category).click();

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class ShopElements extends AbstractBasePage {
+
     public ShopElements(WebDriver driver) {
         super(driver);
     }
@@ -49,6 +50,10 @@ public class ShopElements extends AbstractBasePage {
     private static final String CARD_INFO = "(//div[@class='card__info'])[1]";
     private static final String SECOND_CARD_INFO = "(//div[@class='card__info'])[2]";
     private static final String CONTINUE_PURCHASING = "//button[@class='btn btn--3 btn--white']";
+    private static final String FIRST_IPHONE_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003265676']";
+    private static final String FIRST_SAMSUNG_ITEM_IN_LIST_COMPARE = "//a[@data-compare='003364310']";
+    private static final String SECOND_ITEM_IN_LIST_COMPARE = "(//div[@class='card__add'])[2]/a[@data-tooltip='bottom']";
+    private static final String COMPARE_ICON_BTN = "//span[@class='header__compare-link-icon']";
 
     protected WebElement getCategoryByDataAlt(String category) {
         return waitUntilElementToBeClickable(String.format(CATEGORY_BY_DATA_ALT, category));
@@ -132,12 +137,16 @@ public class ShopElements extends AbstractBasePage {
         return waitUntilElementToBeVisibleByXpath(CONTINUE_PURCHASING);
     }
 
-    protected WebElement getCloseRegionalBannerButton() {
-        return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
+    public WebElement getFirstIphoneItemInListCompare() {
+        return waitUntilElementToBeClickable(FIRST_IPHONE_ITEM_IN_LIST_COMPARE);
     }
 
     protected WebElement getProfitablyBuyButton() {
         return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
+    }
+  
+    protected WebElement getCloseRegionalBannerButton() {
+        return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
     }
 
     protected WebElement getPromotionsBtn() {
@@ -181,5 +190,29 @@ public class ShopElements extends AbstractBasePage {
 
     protected WebElement getFirstPageBtn() {
         return waitUntilElementToBeClickable(FIRST_PAGE_BTN);
+    }
+
+    protected WebElement getProfitablyBuyButton() {
+        return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
+    }
+
+    public WebElement getFirstSamsungItemInListCompare() {
+        return waitUntilElementToBeClickable(FIRST_SAMSUNG_ITEM_IN_LIST_COMPARE);
+    }
+
+    public WebElement getSecondItemInListCompare() {
+        return waitUntilElementToBeClickable(SECOND_ITEM_IN_LIST_COMPARE);
+    }
+
+    public WebElement getCompareIconButton() {
+        return waitUntilElementToBeClickable(COMPARE_ICON_BTN);
+    }
+
+    protected WebElement getCloseRegionalBannerBtn() {
+        return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
+    }
+
+    protected WebElement getProfitablyBuyBtn() {
+        return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
     }
 }
