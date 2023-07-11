@@ -165,8 +165,9 @@ public class ShopElements extends AbstractBasePage {
     }
 
     public int getLastPageBtn() {
+        sleep(3000);
         int lastPage = Integer.parseInt(waitUntilElementToBeVisibleByXpath(LAST_PAGE_BTN).getText());
-        return lastPage - 1;
+        return lastPage;
     }
 
     protected WebElement getFirstPageBtn() {

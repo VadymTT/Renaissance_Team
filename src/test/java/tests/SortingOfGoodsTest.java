@@ -49,20 +49,16 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
             } catch (TimeoutException e) {
                 break;
             }
-            if (listPrice.size() <= 0) {
-                break;
-            } else {
-                List<Double> dLPrice = new ArrayList<>();
-                for (WebElement wElementOfPriceList : listPrice) {
-                    dLPrice.add(Double.valueOf(wElementOfPriceList.getAttribute("title")
-                            .replace("Ціна: ", "").replace(" ₴", "")));
-                }
-                for (int j = 0; j < dLPrice.size() - 1; j++) {
-                    softAssert.assertTrue(dLPrice.get(j) <= dLPrice.get(j + 1));
-                    System.out.println("Сортування від дешевих до дорогих: " + dLPrice.get(j) + "<=" + dLPrice.get(j + 1));
-                }
-                shopPage.clickNextPaginationBtn();
+            List<Double> dLPrice = new ArrayList<>();
+            for (WebElement wElementOfPriceList : listPrice) {
+                dLPrice.add(Double.valueOf(wElementOfPriceList.getAttribute("title")
+                        .replace("Ціна: ", "").replace(" ₴", "")));
             }
+            for (int j = 0; j < dLPrice.size() - 1; j++) {
+                softAssert.assertTrue(dLPrice.get(j) <= dLPrice.get(j + 1));
+                System.out.println("Сортування від дешевих до дорогих: " + dLPrice.get(j) + "<=" + dLPrice.get(j + 1));
+            }
+            shopPage.clickNextPaginationBtn();
         }
 
         shopPage
@@ -75,20 +71,16 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
             } catch (TimeoutException e) {
                 break;
             }
-            if (listPrice.size() <= 0) {
-                break;
-            } else {
-                List<Double> dLPrice = new ArrayList<>();
-                for (WebElement wElementOfPriceList : listPrice) {
-                    dLPrice.add(Double.valueOf(wElementOfPriceList.getAttribute("title")
-                            .replace("Ціна: ", "").replace(" ₴", "")));
-                }
-                for (int j = 0; j < dLPrice.size() - 1; j++) {
-                    softAssert.assertTrue(dLPrice.get(j) >= dLPrice.get(j + 1));
-                    System.out.println("Сортування від дорогих до дешевих: " + dLPrice.get(j) + ">=" + dLPrice.get(j + 1));
-                }
-                shopPage.clickNextPaginationBtn();
+            List<Double> dLPrice = new ArrayList<>();
+            for (WebElement wElementOfPriceList : listPrice) {
+                dLPrice.add(Double.valueOf(wElementOfPriceList.getAttribute("title")
+                        .replace("Ціна: ", "").replace(" ₴", "")));
             }
+            for (int j = 0; j < dLPrice.size() - 1; j++) {
+                softAssert.assertTrue(dLPrice.get(j) >= dLPrice.get(j + 1));
+                System.out.println("Сортування від дорогих до дешевих: " + dLPrice.get(j) + ">=" + dLPrice.get(j + 1));
+            }
+            shopPage.clickNextPaginationBtn();
         }
         softAssert.assertAll();
     }
