@@ -1,7 +1,6 @@
 package elements;
 
 import base.AbstractBasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -26,6 +25,8 @@ public class ShopElements extends AbstractBasePage {
     private static final String FIRST_PRODUCT_CARD_NAME = "(//div[@class='card__name'])[1]//a";
     private static final String CLOSE_REGIONAL_BANNER_BTN = "//div[@class='_lf1rdL']";
     private static final String PROFITABLY_BUY_BTN = "//a[contains(text(), 'Вигідно купити')]";
+    private static final String PROMOTIONS_BTN = "//div[@class='show-for-large']//a[@data-href='aktsii']";
+    private static final String AMOUNT_OF_DISCOUNT = "//div[@class='columns']//span[@class='sticker action']";
     private static final String TITLE_OF_SUBCATEGORY = "//a[contains(text(), '%s')]";
     private static final String SECTION_TITLE_OF_SUBCATEGORY_BTN = "//section/a[contains(text(), '%s')]";
     private static final String CLOSE_ACTION_SLIDER_BTN = "//button[@class='action-slider__close']";
@@ -67,7 +68,7 @@ public class ShopElements extends AbstractBasePage {
     }
 
     public List<WebElement> getListOfProduct() {
-        return driver.findElements(new By.ByXPath(LIST_OF_PRODUCT));
+        return waitUntilPresenceOfAllElementsByXpath(LIST_OF_PRODUCT);
     }
 
     protected WebElement getMinPriceInput() {
@@ -136,13 +137,24 @@ public class ShopElements extends AbstractBasePage {
         return waitUntilElementToBeVisibleByXpath(CONTINUE_PURCHASING);
     }
 
-
     public WebElement getFirstIphoneItemInListCompare() {
         return waitUntilElementToBeClickable(FIRST_IPHONE_ITEM_IN_LIST_COMPARE);
     }
 
+    protected WebElement getProfitablyBuyButton() {
+        return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
+    }
+  
     protected WebElement getCloseRegionalBannerButton() {
         return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
+    }
+
+    protected WebElement getPromotionsBtn() {
+        return waitUntilElementToBeClickable(PROMOTIONS_BTN);
+    }
+
+    public List<WebElement> getAmountOfDiscount() {
+        return waitUntilPresenceOfAllElementsByXpath(AMOUNT_OF_DISCOUNT);
     }
 
     protected WebElement getSubcategoryTitleBtn(String subcategory) {

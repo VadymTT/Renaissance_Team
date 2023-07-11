@@ -155,6 +155,13 @@ public class ShopPage extends ShopElements {
         return this;
     }
 
+    @Step("Click on promotions button on the sorting panel.")
+    public ShopPage clickPromotionsBtn() {
+        getPromotionsBtn().click();
+        sleep(800);
+        return this;
+    }
+
     @Step("Click on subcategory {subcategory} on the catalog.")
     public ShopPage clickOnSubcategoryTitleBtn(String subcategory) {
         getSubcategoryTitleBtn(subcategory).click();
@@ -192,4 +199,3 @@ public class ShopPage extends ShopElements {
         return this;
     }
 }
-

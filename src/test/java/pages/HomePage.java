@@ -4,6 +4,8 @@ import elements.HomeElements;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
+import static base.CommonActions.waitUrlContains;
+
 public class HomePage extends HomeElements {
 
     public HomePage(WebDriver driver) {
@@ -12,11 +14,6 @@ public class HomePage extends HomeElements {
 
     public HomePage catalogOpenBtnClick() {
         getCatalogBtn().click();
-        return this;
-    }
-    @Step("Click logo icon button.")
-    public HomePage logoBtnClick() {
-        getLogoBtn().click();
         return this;
     }
 
@@ -52,6 +49,25 @@ public class HomePage extends HomeElements {
     @Step("Click on category on the main drop-down menu {category}")
     public HomePage clickOnCategoryTittleBtn(String category) {
         getCategoryTittle(category).click();
+        return this;
+    }
+
+    @Step("Entry {product} on the search field.")
+    public HomePage entryOnSearchField(String product) {
+        getSearchField().sendKeys(product);
+        return this;
+    }
+
+    @Step("Click on the search button.")
+    public HomePage clickSearchBtn() {
+        getSearchBtn().click();
+        waitUrlContains(driver, "/shop/");
+        return this;
+    }
+
+    @Step("Click on consent location button.")
+    public HomePage clickConsentLocationBtn() {
+        getConsentLocationBtn().click();
         return this;
     }
 
