@@ -34,9 +34,11 @@ public class SortingOfProductsByPromotionsTest extends AbstractBaseTest {
 
         for (int i = 0; i < newAmountOfDiscountList.size() - 1; i++) {
             double priceFirst = Double.parseDouble(newAmountOfDiscountList.get(i).getText().
-                    replace("%", "").replace("-", ""));
+                    replace("%", "").replace("АКЦІЯ ","").
+                    replace("-", ""));
             double priceSecond = Double.parseDouble(newAmountOfDiscountList.get(i + 1).getText().
-                    replace("%", "").replace("-", ""));
+                    replace("%", "").replace("АКЦІЯ ","").
+                    replace("-", ""));
 
             softAssert.assertTrue(priceFirst >= priceSecond);
             softAssert.assertAll();
