@@ -123,13 +123,15 @@ public class ShopElements extends AbstractBasePage {
         return waitUntilElementToBeVisibleByXpath(CONTINUE_PURCHASING);
     }
 
-    protected WebElement getCloseRegionalBannerButton() {
-        return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
-    }
+        protected WebElement getCloseRegionalBannerButton () {
+            return waitUntilElementToBeClickable(CLOSE_REGIONAL_BANNER_BTN);
+        }
 
-    protected WebElement getProfitablyBuyButton() {
-        return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
+        protected WebElement getProfitablyBuyButton () {
+            return waitUntilElementToBeClickable(PROFITABLY_BUY_BTN);
+        }
     }
+<<<<<<<<< Temporary merge branch 1
 
     protected WebElement getPromotionsBtn() {
         return waitUntilElementToBeClickable(PROMOTIONS_BTN);
@@ -139,3 +141,5 @@ public class ShopElements extends AbstractBasePage {
         return waitUntilPresenceOfAllElementsByXpath(AMOUNT_OF_DISCOUNT);
     }
 }
+=========
+>>>>>>>>> Temporary merge branch 2
