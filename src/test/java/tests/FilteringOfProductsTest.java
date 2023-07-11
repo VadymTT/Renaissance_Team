@@ -23,7 +23,7 @@ public class FilteringOfProductsTest extends AbstractBaseTest {
 
         homePage
                 .catalogOpenBtnClick()
-                .clickOnCategoryTittle("Побутова техніка");
+                .clickOnCategoryTittleBtn("Побутова техніка");
 
         shopPage
                 .clickOnCategory("Пральні машини")
