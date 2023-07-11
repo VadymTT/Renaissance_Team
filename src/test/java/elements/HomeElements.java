@@ -10,16 +10,43 @@ public class HomeElements extends AbstractBasePage {
         super(driver);
     }
 
+    private static final String CONFIRMATION_OF_LOCATION_BUTTON = "//button[@class='btn btn--xsmall btn--white _lyk2tB _DE7oBo']";
+    private static final String SEARCH_FIELD = "//input[@class='_JcImSJ']";
+    private static final String SEARCH_BUTTON = "//button[@class='_cvO7u1']";
+    private static final String CART_ICON_BUTTON = "//div[@class='header__cart']";
+    private static final String EXPERT_SUPPORT_TITTLE = "//a[@title='Експертна підтримка']";
     private static final String CONFIRMATION_OF_ANOTHER_LOCATION_BTN = "//button[text()= 'інший']";
     private static final String TITTLE_OF_CATEGORY = "//a[@title='%s']";
     private static final String HEADER_LOGO = "//a[@class='header__logo']";
     private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
-    private static final String SEARCH_FIELD = "//input[@placeholder='Пошук']";
     private static final String SEARCH_BTN = "//form[@data-is='Search']/button[@class='_cvO7u1']";
     private static final String CONSENT_LOCATION_BTN = "//button[@class='btn btn--xsmall btn--white _lyk2tB _DE7oBo']";
+    private static final String LOGO_BUTTON = "//div[@class='nav']//a[@href='/store/man']";
+
+    //home elements
+    public WebElement getConfirmationOfLocationButton() {
+        return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_LOCATION_BUTTON);
+    }
 
     public WebElement getConfirmationOfAnotherLocationBtn() {
         return waitUntilElementToBeVisibleByXpath(CONFIRMATION_OF_ANOTHER_LOCATION_BTN);
+    }
+
+    protected WebElement getExpertSupport() {
+        return waitUntilElementToBeClickable(EXPERT_SUPPORT_TITTLE);
+    }
+
+    public WebElement getCartIconButton() {
+        return waitUntilElementToBeClickable(CART_ICON_BUTTON);
+    }
+
+    //search field elements
+    public WebElement getSearchField() {
+        return waitUntilElementToBeVisibleByXpath(SEARCH_FIELD);
+    }
+
+    public WebElement getSearchButton() {
+        return waitUntilElementToBeVisibleByXpath(SEARCH_BUTTON);
     }
 
     public WebElement getCatalogBtn() {
@@ -34,15 +61,15 @@ public class HomeElements extends AbstractBasePage {
         return waitUntilElementToBeVisibleByXpath(HEADER_LOGO);
     }
 
-    public WebElement getSearchField() {
-        return waitUntilElementToBeClickable(SEARCH_FIELD);
-    }
-
     public WebElement getSearchBtn() {
         return waitUntilElementToBeClickable(SEARCH_BTN);
     }
 
     public WebElement getConsentLocationBtn() {
         return waitUntilElementToBeClickable(CONSENT_LOCATION_BTN);
+    }
+
+    protected WebElement getLogoBtn() {
+        return waitUntilElementToBeClickable(LOGO_BUTTON);
     }
 }
