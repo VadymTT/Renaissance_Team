@@ -34,9 +34,6 @@ public class HomePage extends HomeElements {
         return this;
     }
 
-<<<<<<<<< Temporary merge branch 1
-    @Step("Click on category on the main drop-down menu {category}.")
-=========
     @Step("Send keys on search field.")
     public HomePage sendKeysSearchField(String send) {
         getSearchField().sendKeys(send);
@@ -50,25 +47,34 @@ public class HomePage extends HomeElements {
     }
 
     @Step("Click on category on the main drop-down menu {category}")
->>>>>>>>> Temporary merge branch 2
     public HomePage clickOnCategoryTittle(String category) {
         getCategoryTittle(category).click();
         return this;
     }
+
     @Step("Entry {product} on the search field.")
     public HomePage entryOnSearchField(String product) {
         getSearchField().sendKeys(product);
         return this;
     }
+
     @Step("Click on the search button.")
     public HomePage clickSearchBtn() {
         getSearchBtn().click();
         waitUrlContains(driver, "/shop/");
         return this;
     }
+
     @Step("Click on consent location button.")
     public HomePage clickConsentLocationBtn() {
         getConsentLocationBtn().click();
+        return this;
+    }
+
+    @Step("Click on “Експертна підтримка“ button in “Корисна інформація“ section in the footer.")
+    public HomePage clickExpertSupportBtn() {
+        scrollForElement(getExpertSupport(), driver);
+        getExpertSupport().click();
         return this;
     }
 }
