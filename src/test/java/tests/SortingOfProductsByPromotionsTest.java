@@ -14,7 +14,6 @@ public class SortingOfProductsByPromotionsTest extends AbstractBaseTest {
     @Test
     @Description("TR-15/Test Case 3. Sorting of products by promotions.")
     public void checkSortingOfProductByPromotions() {
-
         HomePage homePage = new HomePage(driver);
         ShopPage shopPage = new ShopPage(driver);
         SoftAssert softAssert = new SoftAssert();
@@ -23,6 +22,7 @@ public class SortingOfProductsByPromotionsTest extends AbstractBaseTest {
                 .clickConsentLocationBtn()
                 .entryOnSearchField("глобус")
                 .clickSearchBtn();
+        
         for (WebElement element : shopPage.getListOfProduct()) {
             softAssert.assertTrue(element.getText().contains("Глобус"),
                     "Search field doesn't work correctly");
