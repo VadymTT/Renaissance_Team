@@ -9,6 +9,7 @@ import pages.HomePage;
 import pages.ShopPage;
 
 public class CheckCartTest extends AbstractBaseTest {
+
     public static final String MY_ACCOUNT_PAGE_LINK = "https://epicentrk.ua/ua/personal/order/make/";
     public static final String IPHONE = "iPhone 14 Pro Max";
 
@@ -30,6 +31,7 @@ public class CheckCartTest extends AbstractBaseTest {
                 .clickBuyButton();
 
         String selectProductPrice = shopPage.getTextProductPrice();
+
         softAssert.assertEquals(selectProductPrice, shopPage.getTextProductPriceInCart());
 
         shopPage

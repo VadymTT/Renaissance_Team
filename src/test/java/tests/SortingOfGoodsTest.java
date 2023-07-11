@@ -23,7 +23,7 @@ public class SortingOfGoodsTest extends AbstractBaseTest {
 
         homePage
                 .сlickConformationOfLocationBtn()
-                .clickCatalogOpenBtn()
+                .catalogOpenBtnClick()
                 .clickOnCategoryTittleBtn("Ремонт");
 
         shopPage

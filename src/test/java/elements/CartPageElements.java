@@ -5,11 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class CartPageElements extends AbstractBasePage {
+
     public CartPageElements(WebDriver driver) {
         super(driver);
     }
 
-    private static final String DELETE_BTN= "(//button[@class='basket-product__del--link'])[2]";
+    private static final String DELETE_BTN = "(//button[@class='basket-product__del--link'])[2]";
     private static final String CLOSE_BTN = "//button[@class='fancybox-button fancybox-close-small']";
     private static final String DELETE_ALL_PRODUCTS = "//a[@id='js-trigger-del']";
     private static final String REMOVE_FROM_CART_VERIFICATION_CLOSE_BTN = "(//button[@class='fancybox-button fancybox-close-small'])[2]";
