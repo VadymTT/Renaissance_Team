@@ -20,6 +20,7 @@ public class HomeElements extends AbstractBasePage {
     private static final String HEADER_LOGO = "//a[@class='header__logo']";
     private static final String CATALOG_BTN = "//div[@class='header__menu-opener-button']";
     private static final String LOGO_BUTTON = "//div[@class='nav']//a[@href='/store/man']";
+    private static final String CONFIRMATION_OF_LOCATION_BTN = "//button[text()= 'Так']";
 
     //home elements
     public WebElement getConfirmationOfLocationButton() {
@@ -61,5 +62,9 @@ public class HomeElements extends AbstractBasePage {
 
     protected WebElement getLogoBtn() {
         return waitUntilElementToBeClickable(LOGO_BUTTON);
+    }
+
+    protected WebElement getConformationOfLocationBtn() {
+        return waitUntilElementToBeClickable(CONFIRMATION_OF_LOCATION_BTN);
     }
 }
